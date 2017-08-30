@@ -14,7 +14,7 @@ class MainWindow(QWidget):
         lbl1 = QLabel(md.stocks(), self)
         lbl1.move(15, 10)
 
-        lbl2 = QLabel('tutorials', self)
+        lbl2 = QLabel('', self)
         lbl2.move(35, 40)
 
         lbl3 = QLabel('for programmers', self)

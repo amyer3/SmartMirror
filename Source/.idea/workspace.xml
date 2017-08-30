@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FrontEnd.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FrontEnd.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Source/FrontEnd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="240">
+              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -44,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiKeys.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApiKeys.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/ApiKeys.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -94,8 +94,8 @@
         <option value="$PROJECT_DIR$/MirrorData.py" />
         <option value="$PROJECT_DIR$/FrontEnd.py" />
         <option value="$PROJECT_DIR$/Code/FrontEnd.py" />
-        <option value="$PROJECT_DIR$/Source/FrontEnd.py" />
         <option value="$PROJECT_DIR$/Source/ApiKeys.py" />
+        <option value="$PROJECT_DIR$/Source/FrontEnd.py" />
       </list>
     </option>
   </component>
@@ -337,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504070668538</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Smart Mirror Initial">
+      <created>1504070674305</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1504070674305</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -560,21 +567,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/FrontEnd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/ApiKeys.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/FrontEnd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
