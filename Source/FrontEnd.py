@@ -12,15 +12,15 @@ class MainWindow(QWidget):
 
     def initUI(self):
         lbl1 = QLabel(md.stocks(), self)
-        lbl1.move(15, 10)
+        lbl1.move(10, 10)
 
-        lbl2 = QLabel('', self)
-        lbl2.move(35, 40)
+        lbl2 = QLabel(md.weather(), self)
+        lbl2.move(10, 40)
 
-        lbl3 = QLabel('for programmers', self)
-        lbl3.move(55, 70)
+        lbl3 = QLabel(md.times(), self)
+        lbl3.move(10, 70)
 
-        self.setGeometry(300, 300, 250, 150)
+        self.setGeometry(30, 100, 300, 100)
         self.setWindowTitle('Absolute')
         self.show()
 
