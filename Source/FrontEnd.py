@@ -1,8 +1,8 @@
-import MirrorData as Md
-import PyQt5 as P5
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
+import sys
 
+from PyQt5.QtWidgets import QApplication, QWidget
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
