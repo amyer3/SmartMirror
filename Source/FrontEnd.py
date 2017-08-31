@@ -28,14 +28,6 @@ class MainWindow(QWidget):
         self.showFullScreen()
 
 
-#class Timer:
- #   def __init__(self, time):
-  #      super().__init__()
-   #     self.timer = QTimer()
-    #    self.timer.setInterval(time)
-     #   self.timer.connect(md.times())
-        #self.timer.start()
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = MainWindow()
