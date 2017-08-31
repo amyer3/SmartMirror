@@ -1,5 +1,5 @@
 import Source.MirrorData as md
-import PyQt5
+#import Source.DataUpdater as du
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
@@ -12,23 +12,29 @@ class MainWindow(QWidget):
 
         lbl1 = QLabel(md.stocks(), self)
         lbl1.move(10, 10)
+        lbl1.setStyleSheet("color: white")
 
         lbl2 = QLabel(md.weather(), self)
         lbl2.move(10, 40)
+        lbl2.setStyleSheet("color: white")
 
         lbl3 = QLabel(md.times(), self)
         lbl3.move(10, 70)
+        lbl3.setStyleSheet("color: white")
 
-        self.setGeometry(30, 100, 300, 100)
-        self.setWindowTitle('Absolute')
-        self.show()
+        p = self.palette()
+        p.setColor(self.backgroundRole(), Qt.black)
+        self.setPalette(p)
+        self.showFullScreen()
 
-    def clockTimer(self):
-        self.timer = QTimer()
-        self.timer.setInterval(1000)
-        self.timer.timeout.connect(self.on_timer)
-        self.timer.start()
 
+#class Timer:
+ #   def __init__(self, time):
+  #      super().__init__()
+   #     self.timer = QTimer()
+    #    self.timer.setInterval(time)
+     #   self.timer.connect(md.times())
+        #self.timer.start()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
