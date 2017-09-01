@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aeff0c58-da47-4fd3-911b-90cbd5b3b5a9" name="Default" comment="Smart Mirror 8/31">
+    <list default="true" id="aeff0c58-da47-4fd3-911b-90cbd5b3b5a9" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Source/AppJarTest.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Source/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/FrontEnd.py" afterPath="$PROJECT_DIR$/Source/FrontEnd.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/MirrorData.py" afterPath="$PROJECT_DIR$/Source/MirrorData.py" />
@@ -24,12 +25,14 @@
       <file leaf-file-name="MirrorData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/MirrorData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="57" lean-forward="true" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+            <state relative-caret-position="139">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
-                <element signature="e#576#888#0" expanded="false" />
-                <element signature="e#909#1194#0" expanded="false" />
-                <element signature="e#1214#1974#0" expanded="false" />
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#159#561#0" expanded="false" />
+                <element signature="e#584#1124#0" expanded="false" />
+                <element signature="e#1476#1761#0" expanded="false" />
+                <element signature="e#1781#2541#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -38,9 +41,11 @@
       <file leaf-file-name="FrontEnd.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/FrontEnd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="453">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#68#78#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,8 +65,8 @@
       <file leaf-file-name="scratch.txt" pinned="false" current-in-tab="true">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+            <state relative-caret-position="105">
+              <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -112,8 +117,8 @@
         <option value="$PROJECT_DIR$/Source/MirrorUpdated.py" />
         <option value="$PROJECT_DIR$/Source/AppJarTest.py" />
         <option value="$PROJECT_DIR$/Source/DataUpdater.py" />
-        <option value="$PROJECT_DIR$/Source/MirrorData.py" />
         <option value="$PROJECT_DIR$/Source/FrontEnd.py" />
+        <option value="$PROJECT_DIR$/Source/MirrorData.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
       </list>
     </option>
@@ -175,7 +180,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="TEXT&#10;JSON&#10;Python" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Background" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -206,24 +211,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.FrontEnd (1)">
-    <configuration name="ApiKeys" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/System/Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="SmartMirror" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/ApiKeys.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="true" />
-    </configuration>
+  <component name="RunManager" selected="Python.MirrorData">
     <configuration name="AppJarTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -275,6 +263,23 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
     </configuration>
+    <configuration name="MirrorData" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/System/Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SmartMirror" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Source/MirrorData.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+    </configuration>
     <configuration name="Smart Mirror" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -312,17 +317,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Smart Mirror" />
       <item index="1" class="java.lang.String" itemvalue="Python.FrontEnd" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ApiKeys" />
-      <item index="3" class="java.lang.String" itemvalue="Python.FrontEnd (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.AppJarTest" />
+      <item index="2" class="java.lang.String" itemvalue="Python.FrontEnd (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.AppJarTest" />
+      <item index="4" class="java.lang.String" itemvalue="Python.MirrorData" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.FrontEnd (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.AppJarTest" />
-        <item index="2" class="java.lang.String" itemvalue="Python.FrontEnd" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Smart Mirror" />
-        <item index="4" class="java.lang.String" itemvalue="Python.ApiKeys" />
+        <item index="0" class="java.lang.String" itemvalue="Python.MirrorData" />
+        <item index="1" class="java.lang.String" itemvalue="Python.FrontEnd (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.AppJarTest" />
+        <item index="3" class="java.lang.String" itemvalue="Python.FrontEnd" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Smart Mirror" />
       </list>
     </recent_temporary>
   </component>
@@ -424,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504221499699</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Smart Mirror 8/31">
+      <created>1504239109891</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1504239109891</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -482,18 +494,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Smart Mirror Initial" />
     <MESSAGE value="Smart Mirror 8/31" />
     <option name="LAST_COMMIT_MESSAGE" value="Smart Mirror 8/31" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="24" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -503,9 +510,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -531,9 +540,11 @@
         <state relative-caret-position="75">
           <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -543,9 +554,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -555,9 +568,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -567,9 +582,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -579,9 +596,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -591,9 +610,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -603,9 +624,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -615,9 +638,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -627,9 +652,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -649,14 +676,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/secrets.cfg" />
-    <entry file="file://$PROJECT_DIR$/Source/keys.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -685,28 +704,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#22#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/MirrorData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="57" lean-forward="true" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
-          <folding>
-            <element signature="e#576#888#0" expanded="false" />
-            <element signature="e#909#1194#0" expanded="false" />
-            <element signature="e#1214#1974#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Source/FrontEnd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="453">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#68#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/keys.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -721,10 +736,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Source/MirrorData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        <state relative-caret-position="105">
+          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding />
         </state>
       </provider>

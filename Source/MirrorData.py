@@ -2,10 +2,11 @@ import datetime
 import json
 import os
 from urllib.request import urlopen
-
 import pytz
-
 from Source import ApiKeys as keys
+
+
+deg = u'\u00b0'
 
 
 def weather():
@@ -13,11 +14,29 @@ def weather():
     f = urlopen(url)
     json_string = f.read().decode('UTF-8')
     parsed_json = json.loads(json_string)
-    location = parsed_json['location']['city']
+
+    cond = parsed_json['current_observation']['weather']
     temp_f = parsed_json['current_observation']['temp_f']
-    stmt = "Current temperature in %s is: %s" % (location, temp_f)
+    stmt = "%s, %s%s" % (cond, temp_f, deg)
     f.close()
     return stmt
+
+
+def forecast():
+    #tup[0][i] = hours
+    #tup[1][i] = temp_fwds
+    url3 = 'http://api.wunderground.com/api/' + keys.WeatherKey() + '/hourly/q/CA/San_Francisco.json'
+    fcst = urlopen(url3)
+    json_string_fcst = fcst.read().decode('UTF-8')
+    fcst_json = json.loads(json_string_fcst)
+    hour = []
+    temp_fwd = []
+    for T in range(0, 10):
+        hour.insert(T, fcst_json['hourly_forecast'][T]['FCTTIME']['hour'])
+        temp_fwd.insert(T, fcst_json['hourly_forecast'][T]['temp']['english'])
+    fcst.close()
+    tup = (hour, temp_fwd)
+    return tup
 
 
 def news():
@@ -26,8 +45,8 @@ def news():
     c = urlopen(u)
     json_string = c.read().decode('UTF-8')
     parsed_json = json.loads(json_string)
-    for H in range(0, 8, 1):
-        hlns[H] = parsed_json['articles'][H]['title']
+    for H in range(0, 8):
+        hlns.append(parsed_json['articles'][H]['title'])
     return hlns
 
 
@@ -52,6 +71,4 @@ def times():
     #print "Time in Dubai: %s" % datetime.datetime.now(pytz.timezone('Asia/Dubai')).strftime(fmt)
     #print "Time in Hong Kong: %s" % datetime.datetime.now(pytz.timezone('Asia/Hong_Kong')).strftime(fmt)
 
-
-weather()
-stocks()
+news()
