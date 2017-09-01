@@ -7,5 +7,5 @@ class Timer:
         super().__init__()
         self.timer = QTimer()
         self.timer.setInterval(time)
-        self.timer.connect(md.times())
         self.timer.start()
+        self.timer.connect(md.times())

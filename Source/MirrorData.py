@@ -60,13 +60,17 @@ def stocks():
 
 
 def times():
-    dtfmt = '%A, %B %d, %Y'
+    dtfmt = '%A' + os.linesep + '%B %d, %Y' + os.linesep + '%I:%M:%S %p'
     date = datetime.datetime.now(pytz.timezone('US/Pacific')).strftime(dtfmt)
-    fmt = '%I:%M:%S %p'
-    tm = datetime.datetime.now(pytz.timezone('US/Pacific')).strftime(fmt)
-    return date + os.linesep + tm
+    return date
     #print "Time in New York: %s" % datetime.datetime.now(pytz.timezone('America/New_York')).strftime(fmt)
     #print "Time in London: %s" % datetime.datetime.now(pytz.timezone('Europe/London')).strftime(fmt)
     #print "Time in Johannesburg: %s" % datetime.datetime.now(pytz.timezone('Africa/Johannesburg')).strftime(fmt)
     #print "Time in Dubai: %s" % datetime.datetime.now(pytz.timezone('Asia/Dubai')).strftime(fmt)
     #print "Time in Hong Kong: %s" % datetime.datetime.now(pytz.timezone('Asia/Hong_Kong')).strftime(fmt)
+
+
+def graph():
+    dat = forecast()
+    print(dat)
+
