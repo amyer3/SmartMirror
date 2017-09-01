@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeff0c58-da47-4fd3-911b-90cbd5b3b5a9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Source/AppJarTest.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Source/FrontEnd.py" afterPath="$PROJECT_DIR$/Source/Display.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Source/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/FrontEnd.py" afterPath="$PROJECT_DIR$/Source/FrontEnd.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/MirrorData.py" afterPath="$PROJECT_DIR$/Source/MirrorData.py" />
     </list>
     <ignored path="Source/keys.xml" />
@@ -22,27 +21,11 @@
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MirrorData.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/MirrorData.py">
+      <file leaf-file-name="Display.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Source/Display.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#159#561#0" expanded="false" />
-                <element signature="e#584#1124#0" expanded="false" />
-                <element signature="e#1476#1761#0" expanded="false" />
-                <element signature="e#1781#2541#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrontEnd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/FrontEnd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="720">
+              <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
               <folding>
                 <element signature="e#68#78#0" expanded="true" />
               </folding>
@@ -62,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scratch.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scratch.txt" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -118,8 +101,8 @@
         <option value="$PROJECT_DIR$/Source/AppJarTest.py" />
         <option value="$PROJECT_DIR$/Source/DataUpdater.py" />
         <option value="$PROJECT_DIR$/Source/FrontEnd.py" />
-        <option value="$PROJECT_DIR$/Source/MirrorData.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
+        <option value="$PROJECT_DIR$/Source/MirrorData.py" />
       </list>
     </option>
   </component>
@@ -211,7 +194,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MirrorData">
+  <component name="RunManager" selected="Python.FrontEnd (1)">
     <configuration name="AppJarTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -229,7 +212,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
     </configuration>
-    <configuration name="FrontEnd (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="FrontEnd (1)" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -241,7 +224,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="SmartMirror" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Source/FrontEnd.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Source/Display.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
@@ -315,19 +298,18 @@
       <option name="EMULATE_TERMINAL" value="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Smart Mirror" />
-      <item index="1" class="java.lang.String" itemvalue="Python.FrontEnd" />
-      <item index="2" class="java.lang.String" itemvalue="Python.FrontEnd (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.AppJarTest" />
-      <item index="4" class="java.lang.String" itemvalue="Python.MirrorData" />
+      <item index="0" class="java.lang.String" itemvalue="Python.FrontEnd (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.AppJarTest" />
+      <item index="2" class="java.lang.String" itemvalue="Python.MirrorData" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Smart Mirror" />
+      <item index="4" class="java.lang.String" itemvalue="Python.FrontEnd" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.MirrorData" />
-        <item index="1" class="java.lang.String" itemvalue="Python.FrontEnd (1)" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.FrontEnd" />
+        <item index="1" class="java.lang.String" itemvalue="Python.MirrorData" />
         <item index="2" class="java.lang.String" itemvalue="Python.AppJarTest" />
-        <item index="3" class="java.lang.String" itemvalue="Python.FrontEnd" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Smart Mirror" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Smart Mirror" />
       </list>
     </recent_temporary>
   </component>
@@ -436,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504239109891</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Smart Mirror 9/1">
+      <created>1504296270531</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1504296270531</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -496,7 +485,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Smart Mirror Initial" />
     <MESSAGE value="Smart Mirror 8/31" />
-    <option name="LAST_COMMIT_MESSAGE" value="Smart Mirror 8/31" />
+    <MESSAGE value="Smart Mirror 9/1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Smart Mirror 9/1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -708,21 +698,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/FrontEnd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#68#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/keys.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/MirrorData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="71" column="105" lean-forward="false" selection-start-line="71" selection-start-column="105" selection-end-line="71" selection-end-column="105" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#159#561#0" expanded="false" />
+            <element signature="e#584#1124#0" expanded="false" />
+            <element signature="e#1476#1761#0" expanded="false" />
+            <element signature="e#1781#2541#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -736,25 +738,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/MirrorData.py">
+    <entry file="file://$PROJECT_DIR$/Source/Display.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="720">
+          <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#159#561#0" expanded="false" />
-            <element signature="e#584#1124#0" expanded="false" />
-            <element signature="e#1476#1761#0" expanded="false" />
-            <element signature="e#1781#2541#0" expanded="false" />
+            <element signature="e#68#78#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
