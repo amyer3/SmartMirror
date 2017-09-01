@@ -1,26 +1,36 @@
-import Source.MirrorData as md
-#import Source.DataUpdater as du
+# import Source.DataUpdater as du
+# import Source.DataUpdater as du
 import sys
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
+
 from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+
+import Source.MirrorData as md
 
 
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
 
+        self.initUI()
+
+    def initUI(self):
+        font = QFont("times", 30)
         lbl1 = QLabel(md.stocks(), self)
         lbl1.move(10, 10)
         lbl1.setStyleSheet("color: white")
+        lbl1.setFont(font)
 
         lbl2 = QLabel(md.weather(), self)
         lbl2.move(10, 40)
         lbl2.setStyleSheet("color: white")
+        lbl2.setFont(font)
 
         lbl3 = QLabel(md.times(), self)
         lbl3.move(10, 70)
         lbl3.setStyleSheet("color: white")
+        lbl3.setFont(font)
 
         p = self.palette()
         p.setColor(self.backgroundRole(), Qt.black)
