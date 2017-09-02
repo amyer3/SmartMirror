@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeff0c58-da47-4fd3-911b-90cbd5b3b5a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Source/AppJar.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Source/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/Display.py" afterPath="$PROJECT_DIR$/Source/Display.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Source/AppJar.py" afterPath="$PROJECT_DIR$/Source/AppJar.py" />
     </list>
     <ignored path="Source/keys.xml" />
     <manually-removed-from-ignored>
@@ -36,8 +35,8 @@
       <file leaf-file-name="AppJar.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Source/AppJar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+            <state relative-caret-position="180">
+              <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -197,7 +196,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.AppJarTest">
+  <component name="RunManager" selected="Python.AppJar">
+    <configuration name="AppJar" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/System/Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Source" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SmartMirror" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Source/AppJar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+    </configuration>
     <configuration name="AppJarTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -300,19 +316,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.FrontEnd (1)" />
       <item index="1" class="java.lang.String" itemvalue="Python.AppJarTest" />
       <item index="2" class="java.lang.String" itemvalue="Python.MirrorData" />
       <item index="3" class="java.lang.String" itemvalue="Python.Smart Mirror" />
       <item index="4" class="java.lang.String" itemvalue="Python.FrontEnd" />
+      <item index="5" class="java.lang.String" itemvalue="Python.AppJar" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.AppJarTest" />
-        <item index="1" class="java.lang.String" itemvalue="Python.MirrorData" />
-        <item index="2" class="java.lang.String" itemvalue="Python.FrontEnd" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Smart Mirror" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.AppJar" />
+        <item index="1" class="java.lang.String" itemvalue="Python.AppJarTest" />
+        <item index="2" class="java.lang.String" itemvalue="Python.MirrorData" />
+        <item index="3" class="java.lang.String" itemvalue="Python.FrontEnd" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Smart Mirror" />
       </list>
     </recent_temporary>
   </component>
@@ -442,19 +460,25 @@
       <option name="project" value="LOCAL" />
       <updated>1504306623202</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Smart Mirror 9/1">
+      <created>1504311054275</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1504311054276</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="827" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980132" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980132" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980132" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980132" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -797,8 +821,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Source/AppJar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        <state relative-caret-position="180">
+          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
