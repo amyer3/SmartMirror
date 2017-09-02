@@ -1,12 +1,8 @@
-# import Source.DataUpdater as du
-# import Source.DataUpdater as du
 import sys
-
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-
-import Source.MirrorData as md
+import MirrorData as md
 
 
 class MainWindow(QWidget):
@@ -37,10 +33,6 @@ class MainWindow(QWidget):
         self.gridLayout.addWidget(tme, 0, 0)
         self.gridLayout.addWidget(act, 1, 0)
         self.gridLayout.addWidget(wthr, 0, 1)
-        self.gridLayout.setColumnStretch(0, 4)
-        self.gridLayout.setColumnStretch(0, 0)
-        self.gridLayout.setRowStretch(0, 4)
-        self.gridLayout.setRowStretch(1, 0)
         self.setLayout(self.gridLayout)
 
         p = self.palette()

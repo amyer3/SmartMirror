@@ -3,7 +3,7 @@ import json
 import os
 from urllib.request import urlopen
 import pytz
-from Source import ApiKeys as keys
+import ApiKeys as keys
 
 
 deg = u'\u00b0'

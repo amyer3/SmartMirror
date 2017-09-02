@@ -1,4 +1,4 @@
-import Source.MirrorData as md
+import MirrorData as md
 from PyQt5.QtCore import *
 
 
