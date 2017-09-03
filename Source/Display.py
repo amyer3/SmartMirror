@@ -8,6 +8,21 @@ import MirrorData as md
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        p = self.palette()
+        p.setColor(self.backgroundRole(), Qt.black)
+        self.setPalette(p)
+        self.gridLayout()
+        windowLayout = QVBoxLayout()
+        windowLayout.addWidget(self.horizontalGroupBox)
+        self.setLayout(windowLayout)
+        self.showFullScreen()
+
+    def gridLayout(self):
+        self.horizontalGroupBox = QGroupBox()
+        layout = QGridLayout()
         font = QFont("times", 30)
 
         wthr = QLabel(md.weather(), self)
@@ -24,21 +39,24 @@ class MainWindow(QWidget):
 
         newscall = md.news()
         act = QLabel(newscall[2], self)
-        act.setAlignment(Qt.AlignBaseline)
+        act.setAlignment(Qt.AlignBottom)
         act.setStyleSheet("color: white")
         act.setStyleSheet("background: white")
         act.setFont(font)
 
-        self.gridLayout = QGridLayout()
-        self.gridLayout.addWidget(tme, 0, 0)
-        self.gridLayout.addWidget(act, 1, 0)
-        self.gridLayout.addWidget(wthr, 0, 1)
-        self.setLayout(self.gridLayout)
+        jspr = QLabel("Jasper Placeholder", self)
+        jspr.setStyleSheet("color: white")
+        jspr.setStyleSheet("background: white")
+        jspr.setAlignment(Qt.AlignCenter)
+        jspr.setFont(font)
 
-        p = self.palette()
-        p.setColor(self.backgroundRole(), Qt.black)
-        self.setPalette(p)
-        self.showFullScreen()
+        layout.addWidget(tme, 0, 0)
+        layout.addWidget(wthr, 0, 2)
+        layout.addWidget(jspr, 1, 1)
+        layout.addWidget(act, 2, 1)
+        layout.setRowStretch(1, 0)
+
+        self.horizontalGroupBox.setLayout(layout)
 
 
 if __name__ == '__main__':
