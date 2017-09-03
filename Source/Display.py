@@ -40,7 +40,7 @@ class MainWindow(QWidget):
 
         newscall = md.news()
         act = QLabel(newscall[2], self)
-        act.setAlignment(Qt.AlignCenter)
+        act.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
         act.setStyleSheet("color: white")
         act.setStyleSheet("background: white")
         act.setFont(font)
