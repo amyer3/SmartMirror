@@ -26,37 +26,34 @@ class MainWindow(QWidget):
         font = QFont("times", 30)
 
         # white text = xx.setStyleSheet("color: white")
+        # white backgrd = xx.setStyleSheet("background: white")
         wthr = QLabel(md.weather(), self)
         wthr.setStyleSheet("color: white")
         wthr.setAlignment(Qt.AlignRight)
-        wthr.setStyleSheet("background: white")
         wthr.setFont(font)
 
         tme = QLabel(md.times(), self)
         tme.setStyleSheet("color: white")
         tme.setAlignment(Qt.AlignLeft)
-        tme.setStyleSheet("background: white")
         tme.setFont(font)
 
         newscall = md.news()
         act = QLabel(newscall[2], self)
         act.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
         act.setStyleSheet("color: white")
-        act.setStyleSheet("background: white")
         act.setFont(font)
 
         jspr = QLabel("Jasper Placeholder", self)
         jspr.setStyleSheet("color: white")
-        jspr.setStyleSheet("background: white")
         jspr.setAlignment(Qt.AlignCenter)
         jspr.setFont(font)
 
         # xx.addWidget(name, from row, from col, span rows, span cols)
         #Layout
         #  0   1   2
-        #0 TME X WTHR
-        #1 X  JSPR X
-        #2 ACT ACT ACT
+        #0 T       W
+        #1     J
+        #2 A   A   A
         layout.addWidget(tme, 0, 0)
         layout.addWidget(wthr, 0, 2)
         layout.addWidget(jspr, 1, 1)
