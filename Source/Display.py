@@ -25,6 +25,7 @@ class MainWindow(QWidget):
         layout = QGridLayout()
         font = QFont("times", 30)
 
+        # white text = xx.setStyleSheet("color: white")
         wthr = QLabel(md.weather(), self)
         wthr.setStyleSheet("color: white")
         wthr.setAlignment(Qt.AlignRight)
@@ -39,7 +40,7 @@ class MainWindow(QWidget):
 
         newscall = md.news()
         act = QLabel(newscall[2], self)
-        act.setAlignment(Qt.AlignBottom)
+        act.setAlignment(Qt.AlignCenter)
         act.setStyleSheet("color: white")
         act.setStyleSheet("background: white")
         act.setFont(font)
@@ -50,10 +51,16 @@ class MainWindow(QWidget):
         jspr.setAlignment(Qt.AlignCenter)
         jspr.setFont(font)
 
+        # xx.addWidget(name, from row, from col, span rows, span cols)
+        #Layout
+        #  0   1   2
+        #0 TME X WTHR
+        #1 X  JSPR X
+        #2 ACT ACT ACT
         layout.addWidget(tme, 0, 0)
         layout.addWidget(wthr, 0, 2)
         layout.addWidget(jspr, 1, 1)
-        layout.addWidget(act, 2, 1)
+        layout.addWidget(act, 2, 0, 1, 3)
         layout.setRowStretch(1, 0)
 
         self.horizontalGroupBox.setLayout(layout)
