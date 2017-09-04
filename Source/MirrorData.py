@@ -62,7 +62,8 @@ def stocks():
 def times():
     dtfmt = '%A' + os.linesep + '%B %d, %Y' + os.linesep + '%I:%M:%S %p'
     date = datetime.datetime.now(pytz.timezone('US/Pacific')).strftime(dtfmt)
-    return date
+
+    #return date
     #print "Time in New York: %s" % datetime.datetime.now(pytz.timezone('America/New_York')).strftime(fmt)
     #print "Time in London: %s" % datetime.datetime.now(pytz.timezone('Europe/London')).strftime(fmt)
     #print "Time in Johannesburg: %s" % datetime.datetime.now(pytz.timezone('Africa/Johannesburg')).strftime(fmt)
