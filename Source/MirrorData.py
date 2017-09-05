@@ -36,15 +36,17 @@ def forecast():
     hour = []
     temp_fwd = []
     cond = []
-    for T in range(0, 48):
+    hmil = []
+    for T in range(0, 30):
         count.insert(T, T)
         hour.insert(T, fcst_json['hourly_forecast'][T]['FCTTIME']['civil'])  # 'civil' for str hour
         temp_fwd.insert(T, fcst_json['hourly_forecast'][T]['temp']['english'])
         cond.insert(T, fcst_json['hourly_forecast'][T]['wx'])
+        hmil.insert(T, int(fcst_json['hourly_forecast'][T]['FCTTIME']['hour_padded']))
     fcst.close()
-    tup = (count, hour, temp_fwd, cond)
+    tup = (count, hour, temp_fwd, cond, hmil)
     return tup
-    # print(tup[2][1])  # for data validation
+    #print(24 - tup[4][0])  # for data validation
 
 
 def news():
@@ -87,10 +89,12 @@ def graph():
 
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
-    ax.set_xticklabels(tup[1], rotation=45)
+    ax.set_xticks(tup[0])
+    ax.set_xticklabels(tup[1], rotation=90)
     ax.set_facecolor('black')
-    ax.axvline(x=0, color='red')
-    ax.axvline(x=24, color='red')
+    targ = tup[0][0] + (24 - tup[4][0])  # finds midnight
+    ax.axvline(targ, color='red')
+    plt.setp(ax.get_xticklabels()[::2], visible=False)
     plt.show()
 
 graph()
