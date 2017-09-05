@@ -89,11 +89,15 @@ def graph():
 
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
+    ax.tick_params(axis='y', color='white')
+    ax.tick_params(axis='x', color='black')
     ax.set_xticks(tup[0])
-    ax.set_xticklabels(tup[1], rotation=90)
+    plt.setp(ax.get_yticklabels(), color='white')
+    ax.set_xticklabels(tup[1], rotation=90, color="white")
     ax.set_facecolor('black')
+    fig.set_facecolor('black')
     targ = tup[0][0] + (24 - tup[4][0])  # finds midnight
-    ax.axvline(targ, color='red')
+    ax.axvline(targ, color='white')
     plt.setp(ax.get_xticklabels()[::2], visible=False)
     plt.show()
 
