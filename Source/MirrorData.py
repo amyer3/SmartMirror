@@ -4,9 +4,10 @@ import os
 from urllib.request import urlopen
 import pytz
 import ApiKeys as keys
+import matplotlib
 
 
-deg = u'\u00b0'
+DEG = u'\u00b0'  # degree symbol. \final\
 
 
 def weather():
@@ -33,10 +34,11 @@ def forecast():
     temp_fwd = []
     for T in range(0, 10):
         hour.insert(T, fcst_json['hourly_forecast'][T]['FCTTIME']['hour'])
-        temp_fwd.insert(T, fcst_json['hourly_forecast'][T]['temp']['english'])
+        temp_fwd.insert(T, fcst_json['hourly_forecast'][T]['temp']['english']+deg)
     fcst.close()
     tup = (hour, temp_fwd)
-    return tup
+    #return tup
+    print(tup[1][1])  # for data validation
 
 
 def news():
@@ -62,8 +64,7 @@ def stocks():
 def times():
     dtfmt = '%A' + os.linesep + '%B %d, %Y' + os.linesep + '%I:%M:%S %p'
     date = datetime.datetime.now(pytz.timezone('US/Pacific')).strftime(dtfmt)
-
-    #return date
+    return date
     #print "Time in New York: %s" % datetime.datetime.now(pytz.timezone('America/New_York')).strftime(fmt)
     #print "Time in London: %s" % datetime.datetime.now(pytz.timezone('Europe/London')).strftime(fmt)
     #print "Time in Johannesburg: %s" % datetime.datetime.now(pytz.timezone('Africa/Johannesburg')).strftime(fmt)
