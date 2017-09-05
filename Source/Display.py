@@ -3,56 +3,46 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import MirrorData as md
+import time
 import os
-import datetime
-import pytz
+from threading import Thread
 
 
 class MainWindow(QWidget):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, *args):
+        QWidget.__init__(self, *args)
 
-        self.initUI()
-
-    def initUI(self):
         p = self.palette()
         p.setColor(self.backgroundRole(), Qt.black)
         self.setPalette(p)
-        self.gridLayout()
-        windowLayout = QVBoxLayout()
-        windowLayout.addWidget(self.horizontalGroupBox)
-        self.setLayout(windowLayout)
-
-    def gridLayout(self):
-        self.horizontalGroupBox = QGroupBox()
         layout = QGridLayout()
+        self.setLayout(layout)
         font = QFont("times", 30)
 
         # white text = xx.setStyleSheet("color: white")
         # white backgrd = xx.setStyleSheet("background: white")
-        wthr = QLabel(md.weather())
-        wthr.setStyleSheet("color: white")
-        wthr.setAlignment(Qt.AlignRight)
-        wthr.setFont(font)
+        self.wthr = QLabel(md.weather())
+        self.wthr.setStyleSheet("color: white")
+        self.wthr.setAlignment(Qt.AlignRight)
+        self.wthr.setFont(font)
 
         # fill Qlabel with a Qobj that has .setTimer()?
-        #
 
-        tme = QLabel(md.times())
-        tme.setStyleSheet("color: white")
-        tme.setAlignment(Qt.AlignLeft)
-        tme.setFont(font)
+        self.tme = QLabel(" ")
+        self.tme.setStyleSheet("color: white")
+        self.tme.setAlignment(Qt.AlignLeft)
+        self.tme.setFont(font)
 
         newscall = md.news()
-        act = QLabel(newscall[0])
-        act.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
-        act.setStyleSheet("color: white")
-        act.setFont(font)
+        self.act = QLabel(newscall[0])
+        self.act.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
+        self.act.setStyleSheet("color: white")
+        self.act.setFont(font)
 
-        jspr = QLabel("Jasper Placeholder")
-        jspr.setStyleSheet("color: white")
-        jspr.setAlignment(Qt.AlignCenter)
-        jspr.setFont(font)
+        self.jspr = QLabel("Jasper Placeholder")
+        self.jspr.setStyleSheet("color: white")
+        self.jspr.setAlignment(Qt.AlignCenter)
+        self.jspr.setFont(font)
 
         # xx.addWidget(name, from row, from col, span rows, span cols)
         # Layout:
@@ -61,13 +51,27 @@ class MainWindow(QWidget):
         # 1     J
         # 2 A   A   A
 
-        layout.addWidget(tme, 0, 0)
-        layout.addWidget(wthr, 0, 2)
-        layout.addWidget(jspr, 1, 1)
-        layout.addWidget(act, 2, 0, 1, 3)
+        layout.addWidget(self.tme, 0, 0)
+        layout.addWidget(self.wthr, 0, 2)
+        layout.addWidget(self.jspr, 1, 1)
+        layout.addWidget(self.act, 2, 0, 1, 3)
         layout.setRowStretch(1, 0)
 
-        self.horizontalGroupBox.setLayout(layout)
+        updateTime = UpdateTime()
+        updateTime.start()
+        updateTime.refreshT = md.times()
+
+        self.tme.setText(updateTime.refreshT)
+
+
+class UpdateTime(Thread):
+    def __init__(self):
+        Thread.__init__(self)
+
+    def run(self):
+        while True:
+            time.sleep(1)
+            ex.tme.setText(md.times())
 
 
 if __name__ == '__main__':

@@ -4,10 +4,11 @@ import os
 from urllib.request import urlopen
 import pytz
 import ApiKeys as keys
-import matplotlib
+import matplotlib.pyplot as plt
 
 
 DEG = u'\u00b0'  # degree symbol. \final\
+
 
 
 def weather():
@@ -18,27 +19,32 @@ def weather():
 
     cond = parsed_json['current_observation']['weather']
     temp_f = parsed_json['current_observation']['temp_f']
-    stmt = "%s, %s%s" % (cond, temp_f, deg)
+    stmt = "%s, %s%s" % (cond, temp_f, DEG)
     f.close()
     return stmt
 
 
 def forecast():
-    #tup[0][i] = hours
-    #tup[1][i] = temp_fwds
+    # tup[1][i] = hours
+    # tup[2][i] = temp_fwds
+    # tup[3][i] = condition pulled as 'wx'
     url3 = 'http://api.wunderground.com/api/' + keys.WeatherKey() + '/hourly/q/CA/San_Francisco.json'
     fcst = urlopen(url3)
     json_string_fcst = fcst.read().decode('UTF-8')
     fcst_json = json.loads(json_string_fcst)
+    count = []
     hour = []
     temp_fwd = []
+    cond = []
     for T in range(0, 10):
-        hour.insert(T, fcst_json['hourly_forecast'][T]['FCTTIME']['hour'])
-        temp_fwd.insert(T, fcst_json['hourly_forecast'][T]['temp']['english']+deg)
+        count.insert(T, T)
+        hour.insert(T, fcst_json['hourly_forecast'][T]['FCTTIME']['civil'])
+        temp_fwd.insert(T, fcst_json['hourly_forecast'][T]['temp']['english'])
+        cond.insert(T, fcst_json['hourly_forecast'][T]['wx'])
     fcst.close()
-    tup = (hour, temp_fwd)
-    #return tup
-    print(tup[1][1])  # for data validation
+    tup = (count, hour, temp_fwd, cond)
+    return tup
+    # print(tup[2][1])  # for data validation
 
 
 def news():
@@ -65,14 +71,22 @@ def times():
     dtfmt = '%A' + os.linesep + '%B %d, %Y' + os.linesep + '%I:%M:%S %p'
     date = datetime.datetime.now(pytz.timezone('US/Pacific')).strftime(dtfmt)
     return date
-    #print "Time in New York: %s" % datetime.datetime.now(pytz.timezone('America/New_York')).strftime(fmt)
-    #print "Time in London: %s" % datetime.datetime.now(pytz.timezone('Europe/London')).strftime(fmt)
-    #print "Time in Johannesburg: %s" % datetime.datetime.now(pytz.timezone('Africa/Johannesburg')).strftime(fmt)
-    #print "Time in Dubai: %s" % datetime.datetime.now(pytz.timezone('Asia/Dubai')).strftime(fmt)
-    #print "Time in Hong Kong: %s" % datetime.datetime.now(pytz.timezone('Asia/Hong_Kong')).strftime(fmt)
+    # print "Time in New York: %s" % datetime.datetime.now(pytz.timezone('America/New_York')).strftime(fmt)
+    # print "Time in London: %s" % datetime.datetime.now(pytz.timezone('Europe/London')).strftime(fmt)
+    # print "Time in Johannesburg: %s" % datetime.datetime.now(pytz.timezone('Africa/Johannesburg')).strftime(fmt)
+    # print "Time in Dubai: %s" % datetime.datetime.now(pytz.timezone('Asia/Dubai')).strftime(fmt)
+    # print "Time in Hong Kong: %s" % datetime.datetime.now(pytz.timezone('Asia/Hong_Kong')).strftime(fmt)
 
 
 def graph():
-    dat = forecast()
-    print(dat)
+    tup = forecast()
+    x = tup[0]
+    y = tup[2]
+    fig, ax = plt.subplots()
+    ax.bar(x, y, zorder=0.1)
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.set_xticklabels(tup[1])
+    plt.show()
 
+graph()
