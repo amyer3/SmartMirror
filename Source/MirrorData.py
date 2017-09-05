@@ -36,9 +36,9 @@ def forecast():
     hour = []
     temp_fwd = []
     cond = []
-    for T in range(0, 10):
+    for T in range(0, 24):
         count.insert(T, T)
-        hour.insert(T, fcst_json['hourly_forecast'][T]['FCTTIME']['civil'])
+        hour.insert(T, fcst_json['hourly_forecast'][T]['FCTTIME']['civil'])  # 'civil' for str hour
         temp_fwd.insert(T, fcst_json['hourly_forecast'][T]['temp']['english'])
         cond.insert(T, fcst_json['hourly_forecast'][T]['wx'])
     fcst.close()
@@ -87,6 +87,7 @@ def graph():
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
     ax.set_xticklabels(tup[1])
+    ax.set_facecolor('black')
     plt.show()
 
 graph()
