@@ -28,7 +28,7 @@ def forecast():
     # tup[1][i] = hours
     # tup[2][i] = temp_fwds
     # tup[3][i] = condition pulled as 'wx'
-    url3 = 'http://api.wunderground.com/api/' + keys.WeatherKey() + '/hourly/q/CA/San_Francisco.json'
+    url3 = 'http://api.wunderground.com/api/' + keys.WeatherKey() + '/hourly10day/q/CA/San_Francisco.json'
     fcst = urlopen(url3)
     json_string_fcst = fcst.read().decode('UTF-8')
     fcst_json = json.loads(json_string_fcst)
@@ -36,7 +36,7 @@ def forecast():
     hour = []
     temp_fwd = []
     cond = []
-    for T in range(0, 24):
+    for T in range(0, 48):
         count.insert(T, T)
         hour.insert(T, fcst_json['hourly_forecast'][T]['FCTTIME']['civil'])  # 'civil' for str hour
         temp_fwd.insert(T, fcst_json['hourly_forecast'][T]['temp']['english'])
@@ -83,11 +83,14 @@ def graph():
     x = tup[0]
     y = tup[2]
     fig, ax = plt.subplots()
-    ax.bar(x, y, zorder=0.1)
+    ax.plot(x, y, color='white')
+
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
-    ax.set_xticklabels(tup[1])
+    ax.set_xticklabels(tup[1], rotation=45)
     ax.set_facecolor('black')
+    ax.axvline(x=0, color='red')
+    ax.axvline(x=24, color='red')
     plt.show()
 
 graph()
