@@ -92,6 +92,7 @@ class UpdateNews(Thread):
                     self.run()
 
 
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = MainWindow()
