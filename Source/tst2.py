@@ -4,7 +4,6 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import MirrorData as md
 import time
-import os
 from threading import Thread
 
 
@@ -34,7 +33,7 @@ class MainWindow(QWidget):
         self.tme.setFont(font)
 
         newscall = md.news()
-        self.act = QLabel(newscall[0])
+        self.act = QLabel(" ")
         self.act.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
         self.act.setStyleSheet("color: white")
         self.act.setFont(font)
@@ -61,6 +60,10 @@ class MainWindow(QWidget):
         updateTime.start()
         updateTime.refreshT = md.times()
 
+        updateNews = UpdateNews()
+        updateNews.start()
+        updateNews.refreshN = newscall[0]
+
         self.tme.setText(updateTime.refreshT)
 
 
@@ -73,6 +76,7 @@ class UpdateTime(Thread):
             time.sleep(1)
             ex.tme.setText(md.times())
 
+
 class UpdateNews(Thread):
     def __init__(self):
         Thread.__init__(self)
@@ -80,7 +84,7 @@ class UpdateNews(Thread):
     def run(self):
         while True:
             headlines = md.news()
-            for i in headlines.__len__():
+            for i in range(headlines.__len__()):  # TypeError: 'int' object is not iterable
                 if i > headlines.__len__() - 1:
                     ex.act.setText(headlines[i])
                     time.sleep(10)
