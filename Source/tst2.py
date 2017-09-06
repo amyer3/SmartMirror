@@ -25,8 +25,6 @@ class MainWindow(QWidget):
         self.wthr.setAlignment(Qt.AlignRight)
         self.wthr.setFont(font)
 
-        # fill Qlabel with a Qobj that has .setTimer()?
-
         self.tme = QLabel(" ")
         self.tme.setStyleSheet("color: white")
         self.tme.setAlignment(Qt.AlignLeft)

@@ -4,7 +4,6 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import MirrorData as md
 import time
-import os
 from threading import Thread
 
 
@@ -21,12 +20,10 @@ class MainWindow(QWidget):
 
         # white text = xx.setStyleSheet("color: white")
         # white backgrd = xx.setStyleSheet("background: white")
-        self.wthr = QLabel(md.weather())
+        self.wthr = QLabel("graph here")
         self.wthr.setStyleSheet("color: white")
         self.wthr.setAlignment(Qt.AlignRight)
         self.wthr.setFont(font)
-
-        # fill Qlabel with a Qobj that has .setTimer()?
 
         self.tme = QLabel(" ")
         self.tme.setStyleSheet("color: white")
@@ -34,7 +31,7 @@ class MainWindow(QWidget):
         self.tme.setFont(font)
 
         newscall = md.news()
-        self.act = QLabel(newscall[0])
+        self.act = QLabel(" ")
         self.act.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
         self.act.setStyleSheet("color: white")
         self.act.setFont(font)
@@ -61,6 +58,10 @@ class MainWindow(QWidget):
         updateTime.start()
         updateTime.refreshT = md.times()
 
+        updateNews = UpdateNews()
+        updateNews.start()
+        updateNews.refreshN = newscall[0]
+
         self.tme.setText(updateTime.refreshT)
 
 
@@ -72,6 +73,21 @@ class UpdateTime(Thread):
         while True:
             time.sleep(1)
             ex.tme.setText(md.times())
+
+
+class UpdateNews(Thread):
+    def __init__(self):
+        Thread.__init__(self)
+
+    def run(self):
+        while True:
+            headlines = md.news()
+            for i in range(headlines.__len__()):
+                if i < headlines.__len__() - 1:
+                    ex.act.setText(headlines[i])
+                    time.sleep(10)
+                else:
+                    self.run()
 
 
 if __name__ == '__main__':
