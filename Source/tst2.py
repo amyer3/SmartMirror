@@ -85,7 +85,7 @@ class UpdateNews(Thread):
         while True:
             headlines = md.news()
             for i in range(headlines.__len__()):  # TypeError: 'int' object is not iterable
-                if i > headlines.__len__() - 1:
+                if i < headlines.__len__() - 1:
                     ex.act.setText(headlines[i])
                     time.sleep(10)
                 else:
