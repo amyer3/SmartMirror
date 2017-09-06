@@ -8,21 +8,19 @@ import matplotlib.pyplot as plt
 from matplotlib import pylab as pl
 
 
-DEG = u'\u00b0'  # degree symbol. \final\
-
-
-
 def weather():
-    url = 'http://api.wunderground.com/api/'+keys.WeatherKey()+'/geolookup/conditions/q/CA/San_Francisco.json'
+    url = 'http://api.wunderground.com/api/'+keys.WeatherKey()+'/forecast10day/q/CA/San_Francisco.json'
     f = urlopen(url)
-    json_string = f.read().decode('UTF-8')
-    parsed_json = json.loads(json_string)
-
-    cond = parsed_json['current_observation']['weather']
-    temp_f = parsed_json['current_observation']['temp_f']
-    stmt = "%s, %s%s" % (cond, temp_f, DEG)
+    parsed_json = json.loads(f.read().decode('UTF-8'))
     f.close()
-    return stmt
+    day = []
+    wthr = []
+    for W in range(0, 3):
+        day.insert(W, parsed_json['forecast']['txt_forecast']['forecastday'][W]['title'])
+        wthr.insert(W, parsed_json['forecast']['txt_forecast']['forecastday'][W]['fcttext'])
+    #today = "%s:%s%s" % (day, os.linesep, wthr)
+    upcoming = (day, wthr)
+    return upcoming
 
 
 def forecast():
@@ -31,8 +29,7 @@ def forecast():
     # tup[3][i] = condition pulled as 'wx'
     url3 = 'http://api.wunderground.com/api/' + keys.WeatherKey() + '/hourly10day/q/CA/San_Francisco.json'
     fcst = urlopen(url3)
-    json_string_fcst = fcst.read().decode('UTF-8')
-    fcst_json = json.loads(json_string_fcst)
+    fcst_json = json.loads(fcst.read().decode('UTF-8'))
     count = []
     hour = []
     temp_fwd = []
@@ -54,8 +51,7 @@ def news():
     hlns = []
     u = 'https://newsapi.org/v1/articles?source=associated-press&sortBy=top&apiKey='+keys.NewsKey()
     c = urlopen(u)
-    json_string = c.read().decode('UTF-8')
-    parsed_json = json.loads(json_string)
+    parsed_json = json.loads(c.read().decode('UTF-8'))
     for H in range(0, 8):
         hlns.append(parsed_json['articles'][H]['title'])
     return hlns
@@ -64,8 +60,7 @@ def news():
 def stocks():
     url = 'https://www.quandl.com/api/v3/datasets/CHRIS/CME_ES1.json?rows=1&api_key='+keys.StockKey()
     c = urlopen(url)
-    json_string = c.read().decode('UTF-8')
-    json_parsed = json.loads(json_string)
+    json_parsed = json.loads(c.read().decode('UTF-8'))
     price = json_parsed['dataset']['data'][0][4]
     return "S&P500: $%s" % price
 
@@ -102,3 +97,4 @@ def graph():
     plt.setp(ax.get_xticklabels()[::2], visible=False)
     #pl.savefig('fcst.png', bbox_inches='tight')
 
+weather()
