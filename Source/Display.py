@@ -88,15 +88,6 @@ class UpdateNews(Thread):
                 else:
                     self.run()
 
-
-class UpdateForecast(Thread):
-    def __init__(self):
-        Thread.__init__(self)
-
-    def run(self):
-        print("x")
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = MainWindow()

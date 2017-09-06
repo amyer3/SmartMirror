@@ -4,8 +4,6 @@ import os
 from urllib.request import urlopen
 import pytz
 import ApiKeys as keys
-import matplotlib.pyplot as plt
-from matplotlib import pylab as pl
 
 
 def weather():
@@ -21,30 +19,7 @@ def weather():
     #today = "%s:%s%s" % (day, os.linesep, wthr)
     upcoming = (day, wthr)
     return upcoming
-
-
-def forecast():
-    # tup[1][i] = hours
-    # tup[2][i] = temp_fwds
-    # tup[3][i] = condition pulled as 'wx'
-    url3 = 'http://api.wunderground.com/api/' + keys.keyFinder('weather') + '/hourly10day/q/CA/San_Francisco.json'
-    fcst = urlopen(url3)
-    fcst_json = json.loads(fcst.read().decode('UTF-8'))
-    count = []
-    hour = []
-    temp_fwd = []
-    cond = []
-    hmil = []
-    for T in range(0, 30):
-        count.insert(T, T)
-        hour.insert(T, fcst_json['hourly_forecast'][T]['FCTTIME']['civil'])  # 'civil' for str hour
-        temp_fwd.insert(T, fcst_json['hourly_forecast'][T]['temp']['english'])
-        cond.insert(T, fcst_json['hourly_forecast'][T]['wx'])
-        hmil.insert(T, int(fcst_json['hourly_forecast'][T]['FCTTIME']['hour_padded']))
-    fcst.close()
-    tup = (count, hour, temp_fwd, cond, hmil)
-    return tup
-    #print(24 - tup[4][0])  # for data validation
+    #print(upcoming[0][1] + " " + upcoming[1][1])
 
 
 def news():
