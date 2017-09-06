@@ -101,3 +101,4 @@ def graph():
     ax.axvline(targ, color='white')
     plt.setp(ax.get_xticklabels()[::2], visible=False)
     #pl.savefig('fcst.png', bbox_inches='tight')
+
