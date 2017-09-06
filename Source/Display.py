@@ -20,7 +20,7 @@ class MainWindow(QWidget):
 
         # white text = xx.setStyleSheet("color: white")
         # white backgrd = xx.setStyleSheet("background: white")
-        self.wthr = QLabel("graph here")
+        self.wthr = QLabel(" ")
         self.wthr.setStyleSheet("color: white")
         self.wthr.setAlignment(Qt.AlignRight)
         self.wthr.setFont(font)
@@ -62,7 +62,6 @@ class MainWindow(QWidget):
         updateNews.start()
         updateNews.refreshN = newscall[0]
 
-        self.tme.setText(updateTime.refreshT)
 
 
 class UpdateTime(Thread):
@@ -88,6 +87,14 @@ class UpdateNews(Thread):
                     time.sleep(10)
                 else:
                     self.run()
+
+
+class UpdateForecast(Thread):
+    def __init__(self):
+        Thread.__init__(self)
+
+    def run(self):
+        print("x")
 
 
 if __name__ == '__main__':
