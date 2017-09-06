@@ -5,6 +5,7 @@ from urllib.request import urlopen
 import pytz
 import ApiKeys as keys
 import matplotlib.pyplot as plt
+from matplotlib import pylab as pl
 
 
 DEG = u'\u00b0'  # degree symbol. \final\
@@ -99,8 +100,4 @@ def graph():
     targ = tup[0][0] + (24 - tup[4][0])  # finds midnight
     ax.axvline(targ, color='white')
     plt.setp(ax.get_xticklabels()[::2], visible=False)
-    plt.show()
-
-graph()
-
-
+    #pl.savefig('fcst.png', bbox_inches='tight')
