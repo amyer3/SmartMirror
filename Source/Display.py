@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import *
 import MirrorData as md
 import time
 from threading import Thread
+import os
 
 
 class MainWindow(QWidget):
@@ -62,6 +63,8 @@ class MainWindow(QWidget):
         updateNews.start()
         updateNews.refreshN = newscall[0]
 
+        updateFcst = UpdateForecast()
+        updateFcst.start()
 
 
 class UpdateTime(Thread):
@@ -87,6 +90,18 @@ class UpdateNews(Thread):
                     time.sleep(10)
                 else:
                     self.run()
+
+
+class UpdateForecast(Thread):
+    def __init__(self):
+        Thread.__init__(self)
+
+    def run(self):
+        DEG = '\u00b0'
+        tup = md.weather()
+        ex.wthr.setText("Today's Weather: " + os.linesep + tup[2][0] + os.linesep + "High %s%s, low  %s%s" % (tup[0][0], DEG, tup[1][0], DEG))
+        time.sleep(14400)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

@@ -63,10 +63,8 @@ class MainWindow(QWidget):
         updateNews.start()
         updateNews.refreshN = newscall[0]
 
-        tupinit = md.weather()
         updateFcst = UpdateForecast()
         updateFcst.start()
-        #updateFcst.refreshW = tupinit[0][0] + os.linesep + tupinit[1][0]
 
 
 class UpdateTime(Thread):
@@ -99,12 +97,12 @@ class UpdateForecast(Thread):
         Thread.__init__(self)
 
     def run(self):
-        tupW = md.weather()
-        ex.wthr.setText(tupW[0][0] + os.linesep + tupW[1][0])
+        DEG = '\u00b0'
+        tup = md.weather()
+        ex.wthr.setText("Today's Weather: " + os.linesep + tup[2][0] + os.linesep + "High %s%s, low  %s%s" % (tup[0][0], DEG, tup[1][0], DEG))
         time.sleep(14400)
 
 
-# tup[0] = day, tup[1] = weather
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = MainWindow()

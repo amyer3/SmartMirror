@@ -1,4 +1,8 @@
 Smart Mirror project
 
 
-Displays weather, news, stock prices, and world times.
+Displays weather, news, stock prices, and times.
+
+
+Further development will make use of Jasper voice control.
+

@@ -7,19 +7,20 @@ import ApiKeys as keys
 
 
 def weather():
+    DEG = '\u00b0'
     url = 'http://api.wunderground.com/api/'+keys.keyFinder('weather')+'/forecast10day/q/CA/San_Francisco.json'
     f = urlopen(url)
     parsed_json = json.loads(f.read().decode('UTF-8'))
     f.close()
-    day = []
-    wthr = []
+    high = []
+    lo = []
+    cond = []
     for W in range(0, 3):
-        day.insert(W, parsed_json['forecast']['txt_forecast']['forecastday'][W]['title'])
-        wthr.insert(W, parsed_json['forecast']['txt_forecast']['forecastday'][W]['fcttext'])
-    #today = "%s:%s%s" % (day, os.linesep, wthr)
-    upcoming = (day, wthr)
-    return upcoming
-    #print(upcoming[0][1] + " " + upcoming[1][1])
+        high.insert(W, parsed_json['forecast']['simpleforecast']['forecastday'][W]['high']['fahrenheit'])
+        lo.insert(W, parsed_json['forecast']['simpleforecast']['forecastday'][W]['low']['fahrenheit'])
+        cond.insert(W, parsed_json['forecast']['simpleforecast']['forecastday'][W]['conditions'])
+    data = (high, lo, cond)
+    return data
 
 
 def news():
@@ -44,11 +45,3 @@ def times():
     dtfmt = '%A' + os.linesep + '%B %d, %Y' + os.linesep + '%I:%M:%S %p'
     date = datetime.datetime.now(pytz.timezone('US/Pacific')).strftime(dtfmt)
     return date
-    # print "Time in New York: %s" % datetime.datetime.now(pytz.timezone('America/New_York')).strftime(fmt)
-    # print "Time in London: %s" % datetime.datetime.now(pytz.timezone('Europe/London')).strftime(fmt)
-    # print "Time in Johannesburg: %s" % datetime.datetime.now(pytz.timezone('Africa/Johannesburg')).strftime(fmt)
-    # print "Time in Dubai: %s" % datetime.datetime.now(pytz.timezone('Asia/Dubai')).strftime(fmt)
-    # print "Time in Hong Kong: %s" % datetime.datetime.now(pytz.timezone('Asia/Hong_Kong')).strftime(fmt)
-
-
-weather()
