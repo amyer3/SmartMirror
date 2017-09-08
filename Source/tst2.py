@@ -42,17 +42,25 @@ class MainWindow(QWidget):
         self.jspr.setAlignment(Qt.AlignCenter)
         self.jspr.setFont(font)
 
+        self.forecst = QLabel("forecast here")
+        self.forecst.setStyleSheet("color: white")
+        self.forecst.setAlignment(Qt.AlignCenter)
+        self.forecst.setFont(font)
+        self.forecst.setAlignment(Qt.AlignRight | Qt.AlignTop)
+
         # xx.addWidget(name, from row, from col, span rows, span cols)
         # Layout:
-        #   0   1   2
-        # 0 T       W
-        # 1     J
-        # 2 A   A   A
+        #   0   1   2   3
+        # 0 T           W
+        # 1     J   J   F
+        # 2     J   J
+        # 3 A   A   A   A
 
         layout.addWidget(self.tme, 0, 0)
-        layout.addWidget(self.wthr, 0, 2)
-        layout.addWidget(self.jspr, 1, 1)
-        layout.addWidget(self.act, 2, 0, 1, 3)
+        layout.addWidget(self.wthr, 0, 3)
+        layout.addWidget(self.jspr, 1, 1, 2, 2)
+        layout.addWidget(self.forecst, 1, 3)
+        layout.addWidget(self.act, 3, 0, 1, 4)
         layout.setRowStretch(1, 0)
 
         updateTime = UpdateTime()
@@ -97,9 +105,8 @@ class UpdateForecast(Thread):
         Thread.__init__(self)
 
     def run(self):
-        DEG = '\u00b0'
         tup = md.weather()
-        ex.wthr.setText("Today's Weather: " + os.linesep + tup[2][0] + os.linesep + "High %s%s, low  %s%s" % (tup[0][0], DEG, tup[1][0], DEG))
+        ex.wthr.setText("Today's Weather: " + os.linesep + tup[2][0] + os.linesep + "High %s, low %s" % (tup[0][0], tup[1][0]))
         time.sleep(14400)
 
 

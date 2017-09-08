@@ -99,7 +99,7 @@ class UpdateForecast(Thread):
     def run(self):
         DEG = '\u00b0'
         tup = md.weather()
-        ex.wthr.setText("Today's Weather: " + os.linesep + tup[2][0] + os.linesep + "High %s%s, low  %s%s" % (tup[0][0], DEG, tup[1][0], DEG))
+        ex.wthr.setText("Today's Weather: " + os.linesep + tup[2][0] + os.linesep + "%s%s | %s%s" % (tup[0][0], DEG, tup[1][0], DEG))
         time.sleep(14400)
 
 
