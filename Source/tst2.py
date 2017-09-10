@@ -17,24 +17,22 @@ class MainWindow(QWidget):
         self.setPalette(p)
         layout = QGridLayout()
         self.setLayout(layout)
-        majorText = QFont("times", 30)
-        minorText = QFont("helvetica", 15)
+        majorText = QFont("times", 50)
 
         # white text = xx.setStyleSheet("color: white")
         # white backgrd = xx.setStyleSheet("background: white")
         pixmap = QPixmap()
-        pixmap.load("Weather_Icons/overcast.svg")
+        pixmap.load("icons/overcast.svg")
 
         self.wthr = QLabel(" ")
         self.wthr.setStyleSheet("color: white")
-        self.wthr.setAlignment(Qt.AlignCenter | Qt.AlignLeft)
+        self.wthr.setAlignment(Qt.AlignRight | Qt.AlignCenter)
         self.wthr.setFont(majorText)
 
         self.tme = QLabel(" ")
         self.tme.setStyleSheet("color: white")
         self.tme.setAlignment(Qt.AlignLeft)
         self.tme.setFont(majorText)
-        self.tme.setPixmap(pixmap)
 
         newscall = md.news()
         self.act = QLabel(" ")
@@ -49,25 +47,24 @@ class MainWindow(QWidget):
 
         self.forecst = QLabel(" ")
         self.forecst.setStyleSheet("color: white")
-        self.forecst.setFont(minorText)
+        self.forecst.setFont(majorText)
         self.forecst.setAlignment(Qt.AlignRight | Qt.AlignTop)
 
         self.pic = QLabel()
-        self.pic.setPixmap(pixmap.scaled(75, 75))
-        self.pic.setAlignment(Qt.AlignCenter | Qt.AlignRight)
+        self.pic.setPixmap(pixmap.scaled(150, 150))
+        self.pic.setAlignment(Qt.AlignRight | Qt.AlignCenter)
 
         # xx.addWidget(name, from row, from col, span rows, span cols)
         # Layout:
         #   0   1   2   3
         # 0 T       P   W
-        # 1     J   J   F
-        # 2     J   J
+        # 1 J   J   J   J
+        # 2 J   J   J   J
         # 3 A   A   A   A
 
         layout.addWidget(self.tme, 0, 0)
         layout.addWidget(self.wthr, 0, 3)
-        layout.addWidget(self.jspr, 1, 1, 2, 2)
-        layout.addWidget(self.forecst, 1, 3)
+        layout.addWidget(self.jspr, 1, 0, 2, 4)
         layout.addWidget(self.act, 3, 0, 1, 4)
         layout.addWidget(self.pic, 0, 2)
         layout.setRowStretch(1, 0)
@@ -117,7 +114,7 @@ class UpdateForecast(Thread):
         # data = (high, lo, cond(url), day)
         arr = md.strFormatter()
         tup = md.weather()
-        ex.wthr.setText("High "+tup[0][0]+", low "+tup[1][0])
+        ex.wthr.setText("San Francisco, CA" + os.linesep + tup[0][0]+" | "+tup[1][0])
         ex.forecst.setText(arr[0]+os.linesep+arr[1]+os.linesep+arr[2]+os.linesep+arr[3])
         time.sleep(14400)
 
