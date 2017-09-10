@@ -6,6 +6,7 @@ import MirrorData as md
 import time
 from threading import Thread
 import os
+from PyQt5.QtSvg import *
 
 
 class MainWindow(QWidget):
@@ -22,11 +23,11 @@ class MainWindow(QWidget):
         # white text = xx.setStyleSheet("color: white")
         # white backgrd = xx.setStyleSheet("background: white")
         pixmap = QPixmap()
-        pixmap.load("icons/overcast.svg")
+        pixmap.load("icons/mostly-cloudy.svg")
 
         self.wthr = QLabel(" ")
         self.wthr.setStyleSheet("color: white")
-        self.wthr.setAlignment(Qt.AlignRight | Qt.AlignCenter)
+        self.wthr.setAlignment(Qt.AlignRight | Qt.AlignTop)
         self.wthr.setFont(majorText)
 
         self.tme = QLabel(" ")
@@ -45,14 +46,9 @@ class MainWindow(QWidget):
         self.jspr.setAlignment(Qt.AlignCenter)
         self.jspr.setFont(majorText)
 
-        self.forecst = QLabel(" ")
-        self.forecst.setStyleSheet("color: white")
-        self.forecst.setFont(majorText)
-        self.forecst.setAlignment(Qt.AlignRight | Qt.AlignTop)
-
         self.pic = QLabel()
-        self.pic.setPixmap(pixmap.scaled(150, 150))
-        self.pic.setAlignment(Qt.AlignRight | Qt.AlignCenter)
+        self.pic.setPixmap(pixmap.scaled(100, 100))
+        self.pic.setAlignment(Qt.AlignRight | Qt.AlignBottom)
 
         # xx.addWidget(name, from row, from col, span rows, span cols)
         # Layout:
@@ -63,10 +59,10 @@ class MainWindow(QWidget):
         # 3 A   A   A   A
 
         layout.addWidget(self.tme, 0, 0)
-        layout.addWidget(self.wthr, 0, 3)
+        layout.addWidget(self.wthr, 0, 2, 1, 2)
         layout.addWidget(self.jspr, 1, 0, 2, 4)
         layout.addWidget(self.act, 3, 0, 1, 4)
-        layout.addWidget(self.pic, 0, 2)
+        layout.addWidget(self.pic, 0, 2, 1, 2)
         layout.setRowStretch(1, 0)
 
         updateTime = UpdateTime()
@@ -112,10 +108,11 @@ class UpdateForecast(Thread):
 
     def run(self):
         # data = (high, lo, cond(url), day)
+        upArrow = u"\u25B4"
+        dwnArrow = u"\u25BE"
         arr = md.strFormatter()
         tup = md.weather()
-        ex.wthr.setText("San Francisco, CA" + os.linesep + tup[0][0]+" | "+tup[1][0])
-        ex.forecst.setText(arr[0]+os.linesep+arr[1]+os.linesep+arr[2]+os.linesep+arr[3])
+        ex.wthr.setText("San Francisco, CA" + os.linesep+upArrow + " " + tup[0][0] + " | " + dwnArrow + " " + tup[1][0])
         time.sleep(14400)
 
 

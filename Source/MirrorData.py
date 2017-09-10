@@ -56,7 +56,22 @@ def strFormatter():
     barBreak = " | "
     arr = []
     for i in range(1, 5):
-        str = tup[3][i] + colBreak + tup[2][i] + hyphBreak + tup[0][i] + barBreak + tup[1][i]
-        arr.insert(i, str)
+        out = tup[3][i] + colBreak + tup[2][i] + hyphBreak + tup[0][i] + barBreak + tup[1][i]
+        arr.insert(i, out)
     return arr
     #print(arr[0])
+
+
+def svgSelector(cond):
+    if 'overcast' or 'cloudy' in cond:
+        return 'icons/mostly-cloudy.svg'
+    elif 'rain' or 'showers' or 'drizzle' in cond:
+        return 'icons/rain.svg'
+    elif 'snow' or 'ice' or 'hail' in cond:
+        return 'icons/snow.svg'
+    elif 'thunder' in cond:
+        return 'icons/thunder.svg'
+    elif 'fog' in cond:
+        return 'icons/fog.svg'
+    else:
+        return 'icons/sun.svg'
