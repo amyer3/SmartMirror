@@ -6,6 +6,7 @@ import MirrorData as md
 import time
 from threading import Thread
 import os
+from PyQt5.QtSvg import *
 
 
 class MainWindow(QWidget):
@@ -17,42 +18,45 @@ class MainWindow(QWidget):
         self.setPalette(p)
         layout = QGridLayout()
         self.setLayout(layout)
-        font = QFont("times", 30)
+        majorText = QFont("arial unicode ms", 47)
 
-        # white text = xx.setStyleSheet("color: white")
-        # white backgrd = xx.setStyleSheet("background: white")
         self.wthr = QLabel(" ")
         self.wthr.setStyleSheet("color: white")
-        self.wthr.setAlignment(Qt.AlignRight)
-        self.wthr.setFont(font)
+        self.wthr.setAlignment(Qt.AlignRight | Qt.AlignTop)
+        self.wthr.setFont(majorText)
 
         self.tme = QLabel(" ")
         self.tme.setStyleSheet("color: white")
         self.tme.setAlignment(Qt.AlignLeft)
-        self.tme.setFont(font)
+        self.tme.setFont(majorText)
 
         newscall = md.news()
         self.act = QLabel(" ")
         self.act.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
         self.act.setStyleSheet("color: white")
-        self.act.setFont(font)
+        self.act.setFont(majorText)
 
-        self.jspr = QLabel("Jasper Placeholder")
+        self.jspr = QLabel("!")
         self.jspr.setStyleSheet("color: white")
         self.jspr.setAlignment(Qt.AlignCenter)
-        self.jspr.setFont(font)
+        self.jspr.setFont(majorText)
+
+        self.pic = QLabel()
+        self.pic.setAlignment(Qt.AlignLeft | Qt.AlignCenter)
 
         # xx.addWidget(name, from row, from col, span rows, span cols)
         # Layout:
-        #   0   1   2
-        # 0 T       W
-        # 1     J
-        # 2 A   A   A
+        #   0   1   2   3
+        # 0 T       P   W
+        # 1 J   J   J   J
+        # 2 J   J   J   J
+        # 3 A   A   A   A
 
         layout.addWidget(self.tme, 0, 0)
-        layout.addWidget(self.wthr, 0, 2)
-        layout.addWidget(self.jspr, 1, 1)
-        layout.addWidget(self.act, 2, 0, 1, 3)
+        layout.addWidget(self.wthr, 0, 2, 1, 2)
+        layout.addWidget(self.jspr, 1, 0, 2, 4)
+        layout.addWidget(self.act, 3, 0, 1, 4)
+        layout.addWidget(self.pic, 0, 2, 1, 2)
         layout.setRowStretch(1, 0)
 
         updateTime = UpdateTime()
@@ -63,8 +67,8 @@ class MainWindow(QWidget):
         updateNews.start()
         updateNews.refreshN = newscall[0]
 
-        updateFcst = UpdateForecast()
-        updateFcst.start()
+        updateWthr = UpdateWeather()
+        updateWthr.start()
 
 
 class UpdateTime(Thread):
@@ -92,14 +96,19 @@ class UpdateNews(Thread):
                     self.run()
 
 
-class UpdateForecast(Thread):
+class UpdateWeather(Thread):
     def __init__(self):
         Thread.__init__(self)
 
     def run(self):
-        DEG = '\u00b0'
+        # data = (high, lo, cond(url), day)
+        upArrow = u"\u25B4"
+        dwnArrow = u"\u25BE"
         tup = md.weather()
-        ex.wthr.setText("Today's Weather: " + os.linesep + tup[2][0] + os.linesep + "%s%s | %s%s" % (tup[0][0], DEG, tup[1][0], DEG))
+        ex.wthr.setText("San Francisco, CA" + os.linesep + upArrow + " " + tup[0][0] + " | " + dwnArrow + " " + tup[1][0])
+        pixmap = QPixmap()
+        pixmap.load(md.svgSelector())
+        ex.pic.setPixmap(pixmap.scaled(100, 100))
         time.sleep(14400)
 
 

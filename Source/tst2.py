@@ -18,7 +18,7 @@ class MainWindow(QWidget):
         self.setPalette(p)
         layout = QGridLayout()
         self.setLayout(layout)
-        majorText = QFont("arial unicode ms", 50)
+        majorText = QFont("arial unicode ms", 47)
 
         self.wthr = QLabel(" ")
         self.wthr.setStyleSheet("color: white")
@@ -42,7 +42,7 @@ class MainWindow(QWidget):
         self.jspr.setFont(majorText)
 
         self.pic = QLabel()
-        self.pic.setAlignment(Qt.AlignRight | Qt.AlignBottom)
+        self.pic.setAlignment(Qt.AlignLeft | Qt.AlignCenter)
 
         # xx.addWidget(name, from row, from col, span rows, span cols)
         # Layout:
@@ -105,7 +105,7 @@ class UpdateWeather(Thread):
         upArrow = u"\u25B4"
         dwnArrow = u"\u25BE"
         tup = md.weather()
-        ex.wthr.setText("San Francisco, CA" + os.linesep+upArrow + " " + tup[0][0] + " | " + dwnArrow + " " + tup[1][0])
+        ex.wthr.setText("San Francisco, CA" + os.linesep + upArrow + " " + tup[0][0] + " | " + dwnArrow + " " + tup[1][0])
         pixmap = QPixmap()
         pixmap.load(md.svgSelector())
         ex.pic.setPixmap(pixmap.scaled(100, 100))
