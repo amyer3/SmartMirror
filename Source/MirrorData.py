@@ -62,7 +62,9 @@ def strFormatter():
     #print(arr[0])
 
 
-def svgSelector(cond):
+def svgSelector():
+    inpt = weather()
+    cond = inpt[2][0]
     if 'overcast' or 'cloudy' in cond:
         return 'icons/mostly-cloudy.svg'
     elif 'rain' or 'showers' or 'drizzle' in cond:

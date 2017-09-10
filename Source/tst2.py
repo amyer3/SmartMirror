@@ -18,12 +18,7 @@ class MainWindow(QWidget):
         self.setPalette(p)
         layout = QGridLayout()
         self.setLayout(layout)
-        majorText = QFont("times", 50)
-
-        # white text = xx.setStyleSheet("color: white")
-        # white backgrd = xx.setStyleSheet("background: white")
-        pixmap = QPixmap()
-        pixmap.load("icons/mostly-cloudy.svg")
+        majorText = QFont("arial unicode ms", 50)
 
         self.wthr = QLabel(" ")
         self.wthr.setStyleSheet("color: white")
@@ -47,7 +42,6 @@ class MainWindow(QWidget):
         self.jspr.setFont(majorText)
 
         self.pic = QLabel()
-        self.pic.setPixmap(pixmap.scaled(100, 100))
         self.pic.setAlignment(Qt.AlignRight | Qt.AlignBottom)
 
         # xx.addWidget(name, from row, from col, span rows, span cols)
@@ -73,8 +67,8 @@ class MainWindow(QWidget):
         updateNews.start()
         updateNews.refreshN = newscall[0]
 
-        updateFcst = UpdateForecast()
-        updateFcst.start()
+        updateWthr = UpdateWeather()
+        updateWthr.start()
 
 
 class UpdateTime(Thread):
@@ -102,7 +96,7 @@ class UpdateNews(Thread):
                     self.run()
 
 
-class UpdateForecast(Thread):
+class UpdateWeather(Thread):
     def __init__(self):
         Thread.__init__(self)
 
@@ -110,9 +104,11 @@ class UpdateForecast(Thread):
         # data = (high, lo, cond(url), day)
         upArrow = u"\u25B4"
         dwnArrow = u"\u25BE"
-        arr = md.strFormatter()
         tup = md.weather()
         ex.wthr.setText("San Francisco, CA" + os.linesep+upArrow + " " + tup[0][0] + " | " + dwnArrow + " " + tup[1][0])
+        pixmap = QPixmap()
+        pixmap.load(md.svgSelector())
+        ex.pic.setPixmap(pixmap.scaled(100, 100))
         time.sleep(14400)
 
 
