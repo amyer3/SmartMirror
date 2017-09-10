@@ -17,41 +17,49 @@ class MainWindow(QWidget):
         self.setPalette(p)
         layout = QGridLayout()
         self.setLayout(layout)
-        font = QFont("times", 30)
+        majorText = QFont("times", 30)
+        minorText = QFont("helvetica", 15)
 
         # white text = xx.setStyleSheet("color: white")
         # white backgrd = xx.setStyleSheet("background: white")
+        pixmap = QPixmap()
+        pixmap.load("Weather_Icons/overcast.svg")
+
         self.wthr = QLabel(" ")
         self.wthr.setStyleSheet("color: white")
-        self.wthr.setAlignment(Qt.AlignRight)
-        self.wthr.setFont(font)
+        self.wthr.setAlignment(Qt.AlignCenter | Qt.AlignLeft)
+        self.wthr.setFont(majorText)
 
         self.tme = QLabel(" ")
         self.tme.setStyleSheet("color: white")
         self.tme.setAlignment(Qt.AlignLeft)
-        self.tme.setFont(font)
+        self.tme.setFont(majorText)
+        self.tme.setPixmap(pixmap)
 
         newscall = md.news()
         self.act = QLabel(" ")
         self.act.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
         self.act.setStyleSheet("color: white")
-        self.act.setFont(font)
+        self.act.setFont(majorText)
 
-        self.jspr = QLabel("Jasper Placeholder")
+        self.jspr = QLabel("!")
         self.jspr.setStyleSheet("color: white")
         self.jspr.setAlignment(Qt.AlignCenter)
-        self.jspr.setFont(font)
+        self.jspr.setFont(majorText)
 
-        self.forecst = QLabel("forecast here")
+        self.forecst = QLabel(" ")
         self.forecst.setStyleSheet("color: white")
-        self.forecst.setAlignment(Qt.AlignCenter)
-        self.forecst.setFont(font)
+        self.forecst.setFont(minorText)
         self.forecst.setAlignment(Qt.AlignRight | Qt.AlignTop)
+
+        self.pic = QLabel()
+        self.pic.setPixmap(pixmap.scaled(75, 75))
+        self.pic.setAlignment(Qt.AlignCenter | Qt.AlignRight)
 
         # xx.addWidget(name, from row, from col, span rows, span cols)
         # Layout:
         #   0   1   2   3
-        # 0 T           W
+        # 0 T       P   W
         # 1     J   J   F
         # 2     J   J
         # 3 A   A   A   A
@@ -61,6 +69,7 @@ class MainWindow(QWidget):
         layout.addWidget(self.jspr, 1, 1, 2, 2)
         layout.addWidget(self.forecst, 1, 3)
         layout.addWidget(self.act, 3, 0, 1, 4)
+        layout.addWidget(self.pic, 0, 2)
         layout.setRowStretch(1, 0)
 
         updateTime = UpdateTime()
@@ -105,8 +114,11 @@ class UpdateForecast(Thread):
         Thread.__init__(self)
 
     def run(self):
+        # data = (high, lo, cond(url), day)
+        arr = md.strFormatter()
         tup = md.weather()
-        ex.wthr.setText("Today's Weather: " + os.linesep + tup[2][0] + os.linesep + "High %s, low %s" % (tup[0][0], tup[1][0]))
+        ex.wthr.setText("High "+tup[0][0]+", low "+tup[1][0])
+        ex.forecst.setText(arr[0]+os.linesep+arr[1]+os.linesep+arr[2]+os.linesep+arr[3])
         time.sleep(14400)
 
 
