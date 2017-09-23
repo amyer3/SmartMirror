@@ -6,7 +6,6 @@ import MirrorData as md
 import time
 from threading import Thread
 import os
-from PyQt5.QtSvg import *
 
 
 class MainWindow(QWidget):
@@ -22,7 +21,7 @@ class MainWindow(QWidget):
 
         self.wthr = QLabel(" ")
         self.wthr.setStyleSheet("color: white")
-        self.wthr.setAlignment(Qt.AlignRight | Qt.AlignTop)
+        self.wthr.setAlignment(Qt.AlignRight | Qt.AlignBottom)
         self.wthr.setFont(majorText)
 
         self.tme = QLabel(" ")
@@ -105,7 +104,7 @@ class UpdateWeather(Thread):
         upArrow = u"\u25B4"
         dwnArrow = u"\u25BE"
         tup = md.weather()
-        ex.wthr.setText("San Francisco, CA" + os.linesep + upArrow + " " + tup[0][0] + " | " + dwnArrow + " " + tup[1][0])
+        ex.wthr.setText(upArrow + " " + tup[0][0] + " | " + dwnArrow + " " + tup[1][0])
         pixmap = QPixmap()
         pixmap.load(md.svgSelector())
         ex.pic.setPixmap(pixmap.scaled(100, 100))

@@ -6,7 +6,6 @@ import MirrorData as md
 import time
 from threading import Thread
 import os
-from PyQt5.QtSvg import *
 
 
 class MainWindow(QWidget):
@@ -43,6 +42,7 @@ class MainWindow(QWidget):
 
         self.pic = QLabel()
         self.pic.setAlignment(Qt.AlignLeft | Qt.AlignCenter)
+
 
         # xx.addWidget(name, from row, from col, span rows, span cols)
         # Layout:
