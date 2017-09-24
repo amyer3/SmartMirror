@@ -1,10 +1,11 @@
 import speech_recognition as sr
-import pyaudio
 import evernote as en
+import Voice_Control as vc
 
 
-def master():
+def JasperInit():
     with sr.Microphone() as source:
+        setBGN()
         print("Jasper is listening")
         audio = sr.Recognizer().listen(source)
         string = sr.Recognizer().recognize_sphinx(audio)
@@ -15,8 +16,10 @@ def master():
     if "reset" in string:
         setBGN()
 
+
 def mathTest():
     print("2 + 2 = 4")
+    #vc.listen()
 
 
 def addList(string):
@@ -24,6 +27,7 @@ def addList(string):
     command = string.replace("list", "rep")
     print(command)
     print(finder(words))
+    #vc.listen()
 
 
 def finder(arr):
