@@ -105,7 +105,7 @@ class UpdateWeather(Thread):
         upArrow = u"\u25B4"
         dwnArrow = u"\u25BE"
         tup = md.weather()
-        ex.wthr.setText("San Francisco, CA" + os.linesep + upArrow + " " + tup[0][0] + " | " + dwnArrow + " " + tup[1][0])
+        ex.wthr.setText("San Francisco, CA" + os.linesep + upArrow + " " + tup[0][0] + " | " + tup[1][0] + dwnArrow)
         pixmap = QPixmap()
         pixmap.load(md.svgSelector())
         ex.pic.setPixmap(pixmap.scaled(100, 100))

@@ -3,6 +3,7 @@ import speech_recognition as sr
 
 
 r = sr.Recognizer()
+r.energy_threshold = 800
 
 
 def listen():
@@ -23,11 +24,11 @@ def listen():
 
 
 def JasperInit():
-    with sr.Microphone() as source:
+    with sr.Microphone() as source2:
         #setBGN()
         print("Jasper is listening")
-        audio = sr.Recognizer().listen(source)
-        string = sr.Recognizer().recognize_sphinx(audio)
+        audio2 = r.listen(source2)
+        string = r.recognize_sphinx(audio2)
         print(string)
         if "list" in string:
             addList(string)
@@ -35,6 +36,8 @@ def JasperInit():
             mathTest()
         if "reset" in string:
             setBGN()
+        else:
+            listen()
 
 
 def mathTest():

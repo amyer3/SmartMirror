@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.time{
+  float: left;
+}
+.date{
+  text-align: center;
+}
+.weather{
+  float: right;
+}
+.news{
+  text-align: center;
+}
+</style>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="time">
+  <p id="time"></p>
+</div>
+<div class="date">
+  <p id="date"></p>
+</div>
+<div class="weather">
+  <p id="weather"></p>
+</div>
+<div class="news">
+  <p id = "newsp">Top headlines:</p>
+  <p id = "newsJQ"></p>
+  <p id= "hnews"></p>
+</div>
+<script language="javascript" type="text/javascript">
+(function () {
+  function checkTime(i) {return ( i < 10) ? "0" + i : i;}
+  function startTime() {
+          today = new Date(),
+          h = checkTime(today.getHours()),
+          m = checkTime(today.getMinutes()),
+          s = checkTime(today.getSeconds());
+      $('#time').text(h + ":" + m + ":" + s);
+      setTimeout(function () {startTime()}, 500);}
+      startTime();
+    })();
+  </script>
+  <script>
+(function getToday(){
+    var date = new Date(),
+      month = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      curDay = days[date.getDay()],
+      curMonth = month[date.getMonth()],
+      curYear = date.getFullYear(),
+      x = document.getElementById("date");
+    x.innerHTML = curDay +", "+curMonth+" "+date.getDate()+", "+curYear;
+    setTimeout(function(){getToday()}, 84000);
+  })();
+(function getWeather(){
+  $.get("http://api.wunderground.com/api/de2db4c3e5c2c626/geolookup/conditions/q/CA/San_Francisco.xml", function(xml){
+    $('#weather').text($(xml).find('weather').text()+" "+$(xml).find('temp_f').text()+String.fromCharCode(176));
+  })
+  setTimeout(function(){getWeather()}, 900000);
+  })();
+
+  var milli = new Date();
+  var now = milli.getTime();
+function getNews(){
+  $.ajax({
+    type: "GET",
+    url: "https://newsapi.org/v1/articles?source=techcrunch&apiKey=d74b51d7710b45009dbb8e22bb21f0ec",
+    success: postFunc});
+  }
+function postFunc(response) {
+  var ret = response.parse()
+  console.log(ret.status.text())
+
+}
+
+
+
+</script>
+</body>
