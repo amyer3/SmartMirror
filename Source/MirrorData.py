@@ -20,9 +20,7 @@ def weather():
         high.insert(W, parsed_json['forecast']['simpleforecast']['forecastday'][W]['high']['fahrenheit'])
         lo.insert(W, parsed_json['forecast']['simpleforecast']['forecastday'][W]['low']['fahrenheit'])
         cond.insert(W, parsed_json['forecast']['simpleforecast']['forecastday'][W]['conditions'])
-    data = (high, lo, cond, day)
-    return data
-    #print(data[3][0])
+    return high, lo, cond, day, svgSelector(cond[0])
 
 
 def news():
@@ -36,23 +34,20 @@ def news():
 
 
 def times():
-    dtfmt = '%A' + os.linesep + '%B %d, %Y' + os.linesep + '%I:%M:%S %p'
-    date = datetime.datetime.now(pytz.timezone('US/Pacific')).strftime(dtfmt)
-    return date
+    dtfmt = '%A' + os.linesep + '%b %d, %Y' + os.linesep + '%I:%M:%S %p'
+    return datetime.datetime.now(pytz.timezone('US/Pacific')).strftime(dtfmt)
 
 
-def svgSelector():
-    inpt = weather()
-    cond = inpt[2][0]
+def svgSelector(cond):
     if 'overcast' or 'cloudy' in cond:
-        return 'icons/overcast.svg'
+        return 'ArtAssets/icons/overcast.svg'
     elif 'rain' or 'showers' or 'drizzle' in cond:
-        return 'icons/rain.svg'
+        return 'ArtAssets/icons/rain.svg'
     elif 'snow' or 'ice' or 'hail' in cond:
-        return 'icons/snow.svg'
+        return 'ArtAssets/icons/snow.svg'
     elif 'thunder' in cond:
-        return 'icons/thunder.svg'
+        return 'ArtAssets/icons/thunder.svg'
     elif 'fog' in cond:
-        return 'icons/fog.svg'
+        return 'ArtAssets/icons/fog.svg'
     else:
-        return 'icons/sun.svg'
+        return 'ArtAssets/icons/sun.svg'

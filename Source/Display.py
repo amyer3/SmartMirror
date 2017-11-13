@@ -1,11 +1,13 @@
+import os
 import sys
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-import MirrorData as md
 import time
 from threading import Thread
-import os
+
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+
+import MirrorData as md
 
 
 class MainWindow(QWidget):
@@ -101,14 +103,13 @@ class UpdateWeather(Thread):
         Thread.__init__(self)
 
     def run(self):
-        # data = (high, lo, cond(url), day)
         upArrow = u"\u25B4"
         dwnArrow = u"\u25BE"
         tup = md.weather()
-        ex.wthr.setText("San Francisco, CA" + os.linesep + upArrow + " " + tup[0][0] + " | " + tup[1][0] + dwnArrow)
+        ex.wthr.setText("San Francisco" + os.linesep + upArrow + " " + tup[0][0] + " | " + tup[1][0] + dwnArrow)
         pixmap = QPixmap()
-        pixmap.load(md.svgSelector())
-        ex.pic.setPixmap(pixmap.scaled(100, 100))
+        pixmap.load(tup[4][0])
+        ex.pic.setPixmap(pixmap.scaled(125, 125))
         time.sleep(14400)
 
 

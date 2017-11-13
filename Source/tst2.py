@@ -1,11 +1,12 @@
 import sys
+import time
+from threading import Thread
+
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+
 import MirrorData as md
-import time
-from threading import Thread
-import os
 
 
 class MainWindow(QWidget):
