@@ -6,7 +6,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-import MirrorData as md
+from depreciated import MirrorData as md
 
 
 class MainWindow(QWidget):
