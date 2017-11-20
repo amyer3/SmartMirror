@@ -5,7 +5,7 @@
         function(xml){
             $('#weather').text(
                 $(xml).find('weather').text()+
-                " "+
+                ", "+
                 $(xml).find('temp_f').text()+
                 String.fromCharCode(176)
             );

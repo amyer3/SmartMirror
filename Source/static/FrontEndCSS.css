@@ -1,12 +1,15 @@
 .time{
   float: left;
 }
+
 .date{
   text-align: center;
 }
+
 .weather{
   float: right;
 }
+
 .news{
   text-align: center;
 }
