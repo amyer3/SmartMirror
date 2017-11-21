@@ -1,15 +1,22 @@
-.time{
-  float: left;
+.body{
+    color: #ffffff;
+    background-color: black;
 }
 
-.date{
-  text-align: center;
+.time{
+  float: left;
+    width: 50%;
 }
 
 .weather{
   float: right;
+    text-align: right;
+    width: 50%;
 }
 
 .news{
   text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

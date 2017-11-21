@@ -3,7 +3,7 @@
     $.get(
         url ,
         function(xml){
-            $('#weather').text(
+            $('#wStatus').text(
                 $(xml).find('weather').text()+
                 ", "+
                 $(xml).find('temp_f').text()+

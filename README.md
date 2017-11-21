@@ -1,4 +1,4 @@
-Smart Mirror project
+Smart Mirror:
 
 
 Displays weather, news, stock prices, and times.
