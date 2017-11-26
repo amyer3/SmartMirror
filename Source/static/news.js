@@ -5,26 +5,35 @@ function getNews(){
     $.get(
         "https://newsapi.org/v1/articles?source=bbc-news&apiKey=d74b51d7710b45009dbb8e22bb21f0ec",
         function show(json) {
-            console.log("Running");
             for (let x = 0; x < json.articles.length; x++){
-                list.push(json.articles[x]);
+                list[x] = json.articles[x];
             }
-            setInterval(post, 5000);
+            setIntervalX(post, 3000, list.length+1);
         }
     );
 }
 
 function post(){
-    if (currentArticle < list.length -1){
-        currentArticle++
+    if (currentArticle < list.length-1){
+        currentArticle++;
+        $('#newsJQ').text(list[currentArticle].title);
+        //$('#newsDesc').text(list[currentArticle].description);
     } else {
-        currentArticle = 0;
+        currentArticle = -1;
         getNews();
     }
-    $('#newsJQ').text(list[currentArticle].title);
-    $('#newsDesc').text(list[currentArticle].description);
-    console.log(currentArticle)
 }
 
-
 window.onload= getNews();
+
+function setIntervalX(callback, delay, repetitions) {
+    var x = 0;
+    var intervalID = setInterval(function () {
+        callback();
+
+        if (++x === repetitions){
+            window.clearInterval(intervalID);
+        }
+
+    }, delay);
+}

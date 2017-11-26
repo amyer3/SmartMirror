@@ -1,22 +1,44 @@
-.body{
+body{
+    font-family: "Times", serif;
     color: #ffffff;
     background-color: black;
 }
 
 .time{
-  float: left;
+    float: left;
     width: 50%;
 }
 
 .weather{
-  float: right;
+    float: right;
     text-align: right;
     width: 50%;
 }
+#pic{
+    float: right;
+}
+#wStatus{
+    font-size: 3rem;
+    float: right;
+}
 
 .news{
-  text-align: center;
+    text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
+#clock{
+    padding-top: 28px;
+    font-size:5rem;
+    margin: 0px;
+}
+#date{
+    margin: 0px;
+    font-size: 1.5rem;
+}
+#newsJQ{
+    font-size: 3rem;
+    text-align: center;
+}
+

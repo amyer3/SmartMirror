@@ -2,30 +2,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-
     <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='FrontEndCSS.css') }}">
 </head>
 <body>
-
+<div class="spacer" id="spacerTop"></div>
+<div class="spacer" id="spacerRight"></div>
+<div class="spacer" id="spacerLeft"></div>
 <div class="time">
-    <p id="clock"></p>
-    <p id="date"></p>
+    <h1 id="clock"></h1>
+    <h2 id="day"></h2>
+    <h2 id="date"></h2>
 </div>
 
 <div class="weather">
-    <p id="wStatus"></p>
+    <h1 id="wStatus"></h1>
+    <img id="pic" src="{{ url_for('static', filename='animated/thunder.svg') }}" height="100" width="100">
 </div>
 
 <div class="news">
-    <p id="newsJQ"></p>
-    <p id="newsDesc"></p>
+    <h1 id="newsJQ"></h1>
+    <h3 id="newsDesc"></h3>
 </div>
 
 <script type="text/javascript" src="{{ url_for('static', filename='hours.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='date.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='weather.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='news.js') }}"></script>
+
 </body>
