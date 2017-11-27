@@ -1,5 +1,6 @@
 var currentArticle = -1,
-    list=[];
+    list=[],
+    $ = require("jquery");
 
 function getNews(){
     $.get(
