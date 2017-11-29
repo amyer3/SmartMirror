@@ -28,8 +28,8 @@ function post(){
 window.onload= getNews();
 
 function setIntervalX(callback, delay, repetitions) {
-    var x = 0;
-    var intervalID = setInterval(function () {
+    let x = 0;
+    let intervalID = setInterval(function () {
         callback();
 
         if (++x === repetitions){
