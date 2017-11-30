@@ -37,7 +37,7 @@ function setSVG(cond){
     } else if(cond.includes("thunder")){
         $('#weatherIcon').attr("src", "animated/thunder.svg")
     } else {
-        if (date >= 4 && date <= 19){
+        if (date >= 4 && date <= 17){
             $('#weatherIcon').attr("src", "animated/day.svg")
         } else {
             $('#weatherIcon').attr("src", "animated/night.svg")
