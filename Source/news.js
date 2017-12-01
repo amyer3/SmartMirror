@@ -1,6 +1,6 @@
 var currentArticle = -1,
     list=[],
-    $ = require("jquery");
+    $ = require('jquery');
 
 function getNews(){
     $.get(
@@ -9,15 +9,19 @@ function getNews(){
             for (let x = 0; x < json.articles.length; x++){
                 list[x] = json.articles[x];
             }
-            setIntervalX(post, 3000, list.length+1);
+            setIntervalX(post, 4500, list.length+1);
         }
     );
 }
 
+
 function post(){
     if (currentArticle < list.length-1){
         currentArticle++;
-        $('#newsJQ').text(list[currentArticle].title);
+        $("#newsJQ").fadeOut(1000,function() {
+            $(this).text(list[currentArticle].title)
+        }).fadeIn(1000);
+        //$('#newsJQ').text(list[currentArticle].title);
         //$('#newsDesc').text(list[currentArticle].description);
     } else {
         currentArticle = -1;
