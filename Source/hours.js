@@ -11,16 +11,14 @@ var $ = require("jquery");
         }
 
     }
-    function amPM(i) {return (i < 12) ? "AM" : "PM"}
+    function amPM(i) {return (i < 12) ? "am" : "pm"}
     function startTime() {
         let today = new Date();
-        $('#clock').text(
-            hourFormat(today.getHours())
-            + ":" +
-            checkTime(today.getMinutes())
-            + " " +
-            amPM(today.getHours())
-        );
+        $('#numbers').text(hourFormat(today.getHours())+":"+checkTime(today.getMinutes()));
+        $('#ampm').text(" "+amPM(today.getHours()));
         setTimeout(function () {startTime()}, 500);}
     startTime();
 })();
+
+
+//amPM(today.getHours())

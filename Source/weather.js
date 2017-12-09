@@ -1,7 +1,7 @@
 var upArrow = String.fromCharCode(9650),
     downArrow = String.fromCharCode(9660),
     deg = String.fromCharCode(176),
-    $ = require("jquery");
+    $= require("jquery");
 
 (function getWeather(){
     const url ="http://api.wunderground.com/api/de2db4c3e5c2c626/geolookup/forecast10day/q/CA/San_Francisco.json";
@@ -10,8 +10,11 @@ var upArrow = String.fromCharCode(9650),
         function(json){
             let high = json.forecast.simpleforecast.forecastday[0].high.fahrenheit,
                 low = json.forecast.simpleforecast.forecastday[0].low.fahrenheit,
-                cond = json.forecast.simpleforecast.forecastday[0].conditions;
-            $('#wStatus').text(upArrow+high+deg+" | " + low + deg+downArrow)
+                //cond = json.forecast.simpleforecast.forecastday[0].conditions;
+                cond = "fog";
+            //$('#wStatus').text(upArrow+high+deg+ " | "+ low + deg+downArrow);
+            $('#high').text(upArrow+high+deg);
+            $('#low').text(downArrow+low+deg);
             setSVG(cond);
         }
     );
@@ -19,7 +22,7 @@ var upArrow = String.fromCharCode(9650),
 })();
 
 function setSVG(cond){
-    let date = new Date().getHours()
+    let date = new Date().getHours();
     if (cond.includes("drizzle")){
         $('#weatherIcon').attr("src", "animated/sun-rain.svg")
     } else if (cond.includes("rain")){
