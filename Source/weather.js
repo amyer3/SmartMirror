@@ -10,12 +10,12 @@ var upArrow = String.fromCharCode(9650),
         function(json){
             let high = json.forecast.simpleforecast.forecastday[0].high.fahrenheit,
                 low = json.forecast.simpleforecast.forecastday[0].low.fahrenheit,
-                //cond = json.forecast.simpleforecast.forecastday[0].conditions;
-                cond = "fog";
-            //$('#wStatus').text(upArrow+high+deg+ " | "+ low + deg+downArrow);
+                cond = json.forecast.simpleforecast.forecastday[0].conditions;
             $('#high').text(upArrow+high+deg);
             $('#low').text(downArrow+low+deg);
-            setSVG(cond);
+            $('#weatherIcon').attr("src", setSVG(cond));
+
+
         }
     );
     setTimeout(function(){getWeather()}, 1800000);
@@ -24,26 +24,26 @@ var upArrow = String.fromCharCode(9650),
 function setSVG(cond){
     let date = new Date().getHours();
     if (cond.includes("drizzle")){
-        $('#weatherIcon').attr("src", "animated/sun-rain.svg")
+        return "animated/sun-rain.svg";
     } else if (cond.includes("rain")){
-        $('#weatherIcon').attr("src", "animated/heavy-rain.svg")
+        return "animated/heavy-rain.svg";
     } else if (cond.includes("snow")){
-        $('#weatherIcon').attr("src", "animated/snow.svg")
+        return "animated/snow.svg";
     } else if (cond.includes("overcast")){
         if (date >= 6 && date <= 19){
-            $('#weatherIcon').attr("src", "animated/cloudy-day-1.svg")
+            return "animated/cloudy-day-1.svg";
         } else {
-            $('#weatherIcon').attr("src", "animated/cloudy-night-1.svg")
+            return "animated/cloudy-night-1.svg";
         }
     } else if(cond.includes("fog")){
-        $('#weatherIcon').attr("src", "animated/cloudy.svg")
+        return "animated/cloudy.svg";
     } else if(cond.includes("thunder")){
-        $('#weatherIcon').attr("src", "animated/thunder.svg")
+        return "animated/thunder.svg";
     } else {
         if (date >= 4 && date <= 17){
-            $('#weatherIcon').attr("src", "animated/day.svg")
+            return "animated/day.svg";
         } else {
-            $('#weatherIcon').attr("src", "animated/night.svg")
+            return "animated/night.svg";
         }
     }
 }

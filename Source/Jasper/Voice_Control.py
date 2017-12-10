@@ -3,7 +3,7 @@ import speech_recognition as sr
 
 
 r = sr.Recognizer()
-r.energy_threshold = 800
+r.energy_threshold = 16000
 
 
 def listen():
@@ -54,8 +54,7 @@ def addList(string):
 
 
 def finder(arr):
-    r = arr.index("to")
-    return r
+    return arr.index("to")
 
 
 def setBGN():

@@ -12,17 +12,15 @@ body{
 .weather{
     float: right;
     text-align: center;
-    padding-right: 2%;
-    padding-top: 2%;
-
+    padding-top: 4%;
 }
 #weatherIcon{
     position:relative;
     right: 0;
-    transform: translate(0%, -24%)
+    transform: translate(0%, -30%)
 }
 #high, #low{
-    transform:translate(-55%, -600%);
+    transform:translate(-60%, -600%);
     font-size:3rem
 }
 .news{
