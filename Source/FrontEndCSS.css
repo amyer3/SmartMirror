@@ -20,8 +20,13 @@ body{
     transform: translate(0%, -30%)
 }
 #high, #low{
-    transform:translate(-60%, -600%);
-    font-size:3rem
+    transform:translate(-45%, -600%);
+    font-size:3rem;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
 }
 .news{
     text-align: center;

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.1" id="Capa_1" x="0px" y="0px"
+     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+     xml:space="preserve" width="512px" height="512px">
+	<g class="allCircles">
+		<circle cx="64" cy="256" r="64" data-original="#000000" class="active-path" data-old_color="#ffffff" fill="#ffffff"/>
+		<circle cx="256" cy="256" r="64" data-original="#000000" class="active-path" data-old_color="#ffffff" fill="#ffffff"/>
+		<circle  cx="448" cy="256" r="64" data-original="#000000" class="active-path" data-old_color="#ffffff" fill="#ffffff"/>
+    </g>
+
+<style type="text/css"><![CDATA[
+    @keyframes pop1 {
+        0%{ transform: translateY(0)}
+        20%{ transform: translateY(-150px)}
+        40%{ transform: translateY(0px)}
+        60%{transform: translateY(0px)}
+        80%{ transform: translateY(0)}
+        100%{ transform: translateY(0)}
+}
+@keyframes pop2 {
+        0%{ transform: translateY(0)}
+        20%{ transform: translateY(0)}
+        40%{ transform: translateY(-150px)}
+        60%{transform: translateY(0px)}
+        80%{ transform: translateY(0px)}
+        100%{ transform: translateY(0)}
+}
+@keyframes pop3 {
+        0%{ transform: translateY(0)}
+        20%{ transform: translateY(0)}
+        40%{ transform: translateY(0px)}
+        60%{transform: translateY(-150px)}
+        80%{ transform: translateY(0px)}
+        100%{ transform: translateY(0px)}
+}
+
+    .allCircles circle:nth-of-type(1){
+    animation-name: pop1;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+    .allCircles circle:nth-of-type(2){
+    animation-name: pop2;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+    .allCircles circle:nth-of-type(3){
+    animation-name: pop3;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+
+
+    ]]></style>
+
+
+
+
+</svg>
