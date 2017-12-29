@@ -9,7 +9,6 @@ var $ = require("jquery");
         } else {
             return i
         }
-
     }
     function amPM(i) {return (i < 12) ? "am" : "pm"}
     function startTime() {
