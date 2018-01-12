@@ -1,4 +1,5 @@
 const electron = require('electron');
+const fs = require('fs');
 const {app, BrowserWindow} = electron;
 const path = require('path');
 const url = require('url');
@@ -34,7 +35,7 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
-    createWindow()
+    createWindow();
 
 });
 
@@ -54,3 +55,17 @@ app.on('activate', () => {
         createWindow()
     }
 });
+
+var loc = 'firstRun.txt',
+    spawn = require('child_process');
+(function checkFirstRun() {
+    console.log('checking!');
+    if (!fs.existsSync(loc)){
+
+        fs.writeFile(loc,'no', (err)=>{
+            if (err) throw err
+        })
+    } else {
+        console.log('no');
+    }
+})();

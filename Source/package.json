@@ -5,9 +5,9 @@
   "description": "smart mirror with voice control",
   "license": "MIT",
   "dependencies": {
-    "deepspeech": "^0.1.0",
     "electron": "^1.8.1",
     "jquery": "^3.1.1",
-    "node": "^6.12.2"
+    "node": "^6.12.3",
+    "speech-js": "^0.1.1"
   }
 }
